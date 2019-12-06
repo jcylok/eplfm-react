@@ -22,20 +22,20 @@ function ProfileEditModal (props) {
         <Modal.Body>
           <div className="container mt-4">
             <div className="row">
-              <div className="col-md-4 offset-md-4">
+              <div className="col-sm">
                 <form onSubmit={props.handleSubmit}>
                   <span id="are-u-sure">Please remember to save changes</span>
-                  <div className="form-group">
+                  {/* <div className="form-group">
                         <label htmlFor="firstName">First Name</label>
                         <input onChange={props.handleChange} className="form-control form-control-lg" type="text" id="firstName" name="firstName" value={props.firstName}  />
                     </div>
                     <div className="form-group">
                         <label htmlFor="lastName">Last Name</label>
                         <input onChange={props.handleChange} className="form-control form-control-lg" type="text" id="lastName" name="lastName" value={props.lastName}  />
-                    </div>
+                    </div> */}
                     <div className="form-group">
                         <label htmlFor="location">Location</label>
-                        <input onChange={props.handleChange} className="form-control form-control-lg" type="text" id="location" name="location" value={props.currentCity} />
+                        <input onChange={props.handleChange} className="form-control form-control-lg" type="text" id="location" name="location" value={props.location} />
                     </div>
                     <div className="form-group">
                         <label htmlFor="profilePicture">Profile Picture {`(URL)`}</label>
