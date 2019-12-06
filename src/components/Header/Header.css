@@ -1,0 +1,50 @@
+.title-color{
+    color: purple !important;
+    font-family: 'Calistoga', cursive;
+}
+
+.navbar-color{
+    background-color: whitesmoke !important;
+}
+
+.btn-warning {
+    color: purple;
+    font-family: 'Calistoga', cursive;
+    background-color: transparent;
+    border-color: purple;
+    margin-right: 4px;
+    box-shadow: 2px 2px 3px grey;
+
+}
+
+.btn-warning:hover {
+    color: purple;
+    font-family: 'Calistoga', cursive;
+    background-color: transparent;
+    border-color: purple;
+}
+
+.btn-primary {
+    color: purple;
+    font-family: 'Calistoga', cursive;
+    background-color: transparent;
+    border-color: purple;
+    box-shadow: 2px 2px 3px grey;
+}
+
+.btn-primary:hover {
+    color: purple;
+    font-family: 'Calistoga', cursive;
+    background-color: transparent;
+    border-color: purple;
+}
+
+.supreme-emperor12{
+    text-shadow: 2px 2px 3px gray;
+    padding-right: 30px;
+}
+
+.navbar-dark .navbar-toggler {
+    color: purple;
+    border-color: purple;
+}
