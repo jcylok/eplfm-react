@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import Profile from '../../components/Profile/Profile';
+// import ProfileEditContainer from '../ProfileEditContainer/ProfileEditContainer';
 import axios from 'axios';
 
 class ProfileContainer extends Component {
@@ -33,7 +34,7 @@ class ProfileContainer extends Component {
                  firstName: res.data.data.firstName,
                  lastName: res.data.data.lastName,
                  location: res.data.data.location,
-                //  currentCity: res.data.data.currentCity,
+                 dateJoined: res.data.data.dateJoined,
                 //  profilePhoto: res.data.data.profilePhoto,
              });
          })
@@ -87,9 +88,11 @@ class ProfileContainer extends Component {
                             firstName={this.state.firstName}
                             lastName={this.state.lastName}
                             location={this.state.location}
+                            dateJoined={this.state.dateJoined}
                             // profilePhoto={this.state.profilePhoto}
                             />
                         </div>
+                        
                         {/* <div className="col-sm">
                             <ProfilePostsContainer />
                         </div> */}
