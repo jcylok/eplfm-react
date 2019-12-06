@@ -66,29 +66,15 @@ class ProfileContainer extends Component {
         if (localStorage.getItem('uid')) {
             return (
                 <>
-    
-                        <Profile 
-                            profile={this.state.profile}
-                            location={this.state.location}
-                            dateJoined={this.state.dateJoined}
-                            profilePicture={this.state.profilePicture} 
-                            handleChange={this.handleChange}
-                            handleSubmit={this.handleSubmit}
-                            />
-      
-{/*                     
-                        <ProfileEditModal
-                                // firstName={this.state.firstName}
-                                // lastName={this.state.lastName}
-                                location={this.state.location}
-                                dateJoined={this.state.dateJoined}
-                                profilePicture={this.state.profilePicture} 
-                                handleChange={this.handleChange}
-                                handleSubmit={this.handleSubmit} /> */}
-                   
+                <Profile 
+                    profile={this.state.profile}
+                    location={this.state.location}
+                    dateJoined={this.state.dateJoined}
+                    profilePicture={this.state.profilePicture} 
+                    handleChange={this.handleChange}
+                    handleSubmit={this.handleSubmit}
+                />
                </> 
-        
-                 
             )            
         } else {
             return (

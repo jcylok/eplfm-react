@@ -46,7 +46,10 @@ const Header = (props) => {
       </li>
     
       <li className="nav-item">
-        {userID && <NavLink className="supreme-emperor12" to={'/profile'}>Profile</NavLink>}
+        {userID && <NavLink className="supreme-emperor12" to={'/myteam'}>My Team</NavLink>}
+      </li>
+      <li className="nav-item">
+        {userID && <NavLink className="supreme-emperor12" to={'/market'}>Market</NavLink>}
       </li>
       <li className="nav-item">
         {userID &&  <button className="supreme-emperor12" onClick={() => props.logout() }>Logout</button>}
