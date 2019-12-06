@@ -1,12 +1,13 @@
 import React from "react";
+import './Results.css'
 
 const Results = props => {
     return (
-        <div className="col-md-4" style={{marginBottom:30, marginTop:30}}>
-                <h2 style={{fontSize:16}}>{props.playerdata.player_name}</h2>
-                {/* <img width={200} height={120} mode='fit'
-                    src={props.gifdata.images.fixed_height.url} 
-                    alt={props.gifdata.source_post_url} /> */}
+        <div className="col-md-4 resultPlayer">
+            <p>{props.playerdata.firstname} {props.playerdata.lastname}</p>
+                <img mode='fit'
+                    src="https://resources.premierleague.com/photos/2019/06/20/056b6aca-a668-4b77-aeb8-a18516e8e5b6/LIV_HK_516.png?width=260&height=330"
+                    alt="jersey" />
         </div>
 
     )

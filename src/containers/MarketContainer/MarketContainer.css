@@ -1,0 +1,23 @@
+.searchContainer {
+    position: absolute;
+    left: 50%;
+    margin-left: -100px;
+    /* background: chartreuse; */
+    margin-top: 150px;
+}
+
+
+.resultContainer {
+    background: lightgray;
+    /* margin-left: 150px; */
+    margin-top: 250px;
+    text-align: center;
+}
+
+@media(max-width:767px) {
+    .resultContainer {
+        background: lightgray;
+        /* margin-left: 100px; */
+        margin-top: 250px;
+    }
+}

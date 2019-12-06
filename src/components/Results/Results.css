@@ -1,0 +1,15 @@
+.resultPlayer {
+    margin-bottom: 50px;
+}
+
+.resultPlayer img {
+    width: 200px;
+    height: auto;
+    margin-top: 30px;
+}
+
+@media(max-width:767px) {
+    .resultPlayer img {
+        width: 100px;
+    }
+}
