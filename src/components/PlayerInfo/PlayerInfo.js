@@ -1,5 +1,4 @@
 import React from 'react';
-import ProfileEditModal from '../ProfileEditModal/ProfileEditModal';
 import './PlayerInfo.css'
 import jersey from '../../images/liverpool-jersey.png';
 
@@ -23,20 +22,29 @@ const PlayerInfo = (props) => {
                 <p><strong>Weight:</strong> {props.infoNew.weight}</p>
                 <p><strong>Birth Date:</strong> {props.infoNew.birth_date}</p>
                 <p><strong>Nationality:</strong> {props.infoNew.nationality}</p>
-                {/* <ProfileEditModal
-                    location={props.location}
-                    dateJoined={props.dateJoined}
-                    profilePicture={props.profilePicture} 
-                    handleChange={props.handleChange}
-                    handleSubmit={props.handleSubmit} /> */}
+                <p><strong>Rating:</strong> {props.infoNew.rating? props.infoNew.rating:"Not available"}</p>
+
 
             </div>
 
             </div>
+            <div className="action">
+                <h3>Action</h3>
+                <div className="actionbuttons">
+                    <input type="submit" className="app-button" id="btnBuy" value="Buy"/>
+                    &nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="submit" className="app-button" id="btnSell" value="Sell"/>
+                </div>
+            </div>
+
+
+
+
+
             <div className="row playerstat">
             <div className="container">
-                <h2>Player's Statistics</h2>
-                <p>The .table-striped class adds zebra-stripes to a table:</p>            
+                <h3>Player's Statistics</h3>
+                <p>The data will be updates once a week:</p>            
                 <table className="table table-striped">
                     <thead>
                     <tr>
@@ -82,17 +90,17 @@ const PlayerInfo = (props) => {
                     </tr>
                     <tr>
                         <td>Passes</td>
-                        <td>Duels</td>
-                        <td>Shots</td>
-                        <td>Goals</td>
+                        <td><p>accuracy:</p><p>key:</p><p>total:</p></td>
+                        <td><p>{props.infoOld && props.infoOld.passes && props.infoOld.passes.accuracy}</p><p>{props.infoOld && props.infoOld.passes && props.infoOld.passes.key}</p><p>{props.infoOld && props.infoOld.passes && props.infoOld.passes.total}</p></td>
+                        <td><p>{props.infoNew && props.infoNew.passes && props.infoNew.passes.accuracy}</p><p>{props.infoNew && props.infoNew.passes && props.infoNew.passes.key}</p><p>{props.infoNew && props.infoNew.passes && props.infoNew.passes.total}</p></td>
                         {/* <td>Passes</td> */}
         
                     </tr>
                     <tr>
                         <td>Tackles</td>
-                        <td>Duels</td>
-                        <td>Shots</td>
-                        <td>Goals</td>
+                        <td><p>blocks:</p><p>interceptions:</p><p>total:</p></td>
+                        <td><p>{props.infoOld && props.infoOld.tackles && props.infoOld.tackles.blocks}</p><p>{props.infoOld && props.infoOld.tackles && props.infoOld.tackles.interceptions}</p><p>{props.infoOld && props.infoOld.tackles && props.infoOld.tackles.total}</p></td>
+                        <td><p>{props.infoNew && props.infoNew.tackles && props.infoNew.tackles.blocks}</p><p>{props.infoNew && props.infoNew.tackles && props.infoNew.tackles.interceptions}</p><p>{props.infoNew && props.infoNew.tackles && props.infoNew.tackles.total}</p></td>
                         {/* <td>Passes</td> */}
                   
                     </tr>

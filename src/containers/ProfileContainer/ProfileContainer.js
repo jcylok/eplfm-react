@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Profile from '../../components/Profile/Profile';
 // import ProfileEditContainer from '../ProfileEditContainer/ProfileEditContainer';
-import ProfileEditModal from '../../components/ProfileEditModal/ProfileEditModal';
+// import ProfileEditModal from '../../components/ProfileEditModal/ProfileEditModal';
 import axios from 'axios';
 
 
