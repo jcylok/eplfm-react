@@ -38,7 +38,7 @@ class ProfileContainer extends Component {
         })
             .then((res) => {
                 this.componentDidMount();
-                this.props.history.push('/profile');
+                this.props.history.push('/myteam');
             })
             .catch((err) => console.log(err)); 
     }
