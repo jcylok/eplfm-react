@@ -5,7 +5,7 @@ import RegisterContainer from '../components/Auth/RegisterContainer';
 import LoginContainer from '../components/Auth/LoginContainer';
 import ProfileContainer from '../containers/ProfileContainer/ProfileContainer';
 import MarketContainer from '../containers/MarketContainer/MarketContainer';
-
+import playerContainer from '../containers/PlayerContainer/PlayerContainer';
 
 export default () => (
     <Switch>
@@ -14,6 +14,7 @@ export default () => (
         <Route path='/login' component={ LoginContainer }/>
         <Route path='/myteam' component={ ProfileContainer }/>
         <Route path='/market' component={ MarketContainer }/>
+        <Route path='/player/:playername' component={ playerContainer }/>
 
     </Switch>
 );
