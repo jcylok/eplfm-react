@@ -1,7 +1,30 @@
+.playerCard {
+    background: chartreuse;
+    margin: 20px;
+    padding-bottom: 20px;
+}
+
+@media(max-width:767px) {
+    .playerCard {
+        /* margin: 7px; */
+        padding-bottom: 0px;
+        width: 200px;
+        margin: 10px auto;
+    }
+}
+
+
+
 .resultPlayer {
     margin-bottom: 50px;
 }
 
+
+@media(max-width:767px) {
+    .resultPlayer {
+        margin-bottom: 0px;
+    }
+}
 .resultPlayer img {
     width: 200px;
     height: auto;
