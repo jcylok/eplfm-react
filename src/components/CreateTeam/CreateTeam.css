@@ -1,5 +1,9 @@
 #teamname h1 {
     text-align: center;
     margin-top: 50px;
+    font-size: 30px;
 }
 
+#teamname div {
+    text-align: center;
+}

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import Profile from '../../components/Profile/Profile';
 import Team from '../../components/Team/Team';
+import CreateTeam from '../../components/CreateTeam/CreateTeam';
 import './ProfileContainer.css';
 // import ProfileEditContainer from '../ProfileEditContainer/ProfileEditContainer';
 // import ProfileEditModal from '../../components/ProfileEditModal/ProfileEditModal';
@@ -12,10 +13,10 @@ class ProfileContainer extends Component {
         super();
         this.state = {
             profile: {},
-            // firstName: '',
-            // lastName: '',
+            team: {},
             location: '',
             profilePicture: '',
+            createName: '',
         }
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -45,6 +46,45 @@ class ProfileContainer extends Component {
             .catch((err) => console.log(err)); 
     }
 
+    createTeamChange = (event) => {
+        this.setState({
+            [event.target.name]: event.target.value
+        })
+    }
+
+    createTeamSubmit = (event) => {
+        event.preventDefault();
+        console.log('create team submitted')
+        console.log( event.target.value)
+        axios.post(`${process.env.REACT_APP_API_URL}/teams/`, {
+            user: localStorage.getItem('uid'),
+            name: this.state.createName,
+            nameURL: this.state.createName.replace(/ /g,'').toLowerCase()
+        })
+        .then((res) => {
+        //   this.props.history.push('/myteam')
+          console.log(res)
+
+          axios.put(`${process.env.REACT_APP_API_URL}/users/${localStorage.getItem('uid')}`, 
+          {
+              teamID: res.data.data._id,
+              teamName: res.data.data.name,
+              teamNameURL: res.data.data.nameURL
+          }, 
+          {
+            withCredentials: true,
+          })
+            .then((res) => {
+                this.componentDidMount();
+                this.props.history.push('/myteam');
+            })
+            .catch((err) => console.log(err)); 
+
+        })
+        .catch((err) => console.log(err)); 
+    
+    }
+
     componentDidMount() {
         const userId = localStorage.getItem('uid');
         axios.get(`${process.env.REACT_APP_API_URL}/users/${userId}`,{
@@ -53,14 +93,12 @@ class ProfileContainer extends Component {
          .then((res) => {
              this.setState({
                  profile: res.data.data,
-                //  firstName: res.data.data.firstName,
-                //  lastName: res.data.data.lastName,
                  location: res.data.data.location,
                  profilePicture: res.data.data.profilePicture,
-                //  profilePhoto: res.data.data.profilePhoto,
              });
          })
          .catch((err) => console.log(err));
+
     }
 
 
@@ -69,7 +107,7 @@ class ProfileContainer extends Component {
             return (
                 <>
                 <section id='teamname'>
-                    <h1>Team Name</h1>
+                    <h1>{this.state.profile.teamName}</h1>
                 </section>
                 <Profile 
                     profile={this.state.profile}
@@ -78,16 +116,22 @@ class ProfileContainer extends Component {
                     profilePicture={this.state.profilePicture} 
                     handleChange={this.handleChange}
                     handleSubmit={this.handleSubmit}
+                    
                 />
                 <Team profile={this.state.profile} /> 
                </>
             )            
-        } else if (localStorage.getItem('uid') && !this.state.profile.teamID) {
+        } else if (localStorage.getItem('uid') && !this.state.profile.teamName) {
             return (
                 <>
-                <section id='teamname'>
-                    <h1><button>Create Team</button></h1>
-                </section>
+                {/* <section id='teamname'>
+                    <h1>Create Your Dream Team Today</h1>
+                    <div>
+                    <button>Start</button>
+                    </div>
+          
+                </section> */}
+                <CreateTeam createTeamSubmit={this.createTeamSubmit} createName={this.state.createName} createTeamChange={this.createTeamChange}/>
                 <Profile 
                     profile={this.state.profile}
                     location={this.state.location}
