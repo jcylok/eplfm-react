@@ -103,7 +103,8 @@ class ProfileContainer extends Component {
 
 
     render () {
-        if (localStorage.getItem('uid') && this.state.profile.teamID) {
+        
+        if (localStorage.getItem('uid') && this.state && this.state.profile.teamName) {
             return (
                 <>
                 <section id='teamname'>
@@ -121,7 +122,7 @@ class ProfileContainer extends Component {
                 <Team profile={this.state.profile} /> 
                </>
             )            
-        } else if (localStorage.getItem('uid') && !this.state.profile.teamName) {
+        } else if (localStorage.getItem('uid') && this.state && !this.state.profile.teamName) {
             return (
                 <>
                 {/* <section id='teamname'>

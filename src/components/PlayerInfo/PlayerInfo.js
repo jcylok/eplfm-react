@@ -42,7 +42,7 @@ const PlayerInfo = (props) => {
               </div>
 
                 {/* buy modal */}
-                <div className="modal fade" id="buy" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div className="modal fade" id="buy" tabIndex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                 <div className="modal-dialog modal-dialog-centered" role="document">
                     <div className="modal-content">
                     <div className="modal-header">
@@ -62,7 +62,7 @@ const PlayerInfo = (props) => {
                 </div>
                 </div>
                 {/* sell modal */}
-                <div className="modal fade" id="sell" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div className="modal fade" id="sell" tabIndex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                 <div className="modal-dialog modal-dialog-centered" role="document">
                     <div className="modal-content">
                     <div className="modal-header">

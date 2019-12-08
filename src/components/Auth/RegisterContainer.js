@@ -27,6 +27,7 @@ class RegisterContainer extends Component {
         axios.post(`${process.env.REACT_APP_API_URL}/auth/register`, this.state)
           .then((res) => {
             console.log(res);
+            this.props.history.push('/login');
           })
           .catch((err) => console.log(err));
     }
