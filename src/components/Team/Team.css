@@ -1,5 +1,5 @@
 .sectionteam {
-    background: chartreuse;
+    background: burlywood;
     margin-top: 50px;
 }
 
@@ -12,6 +12,10 @@
     padding: 50px;
     text-align: center;
 }
+
+/* .visualization {
+    background: url('../../images/pitch.png') no-repeat;
+} */
 
 #pitch {
     width: 100%;

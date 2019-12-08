@@ -15,7 +15,11 @@ const Team = (props) => {
         
 
                 </div>
-                <div className="col-sm tactics">
+                <div className="col-sm tactics visualization">
+                    <div>1</div>
+                    <div>2</div>
+                    <div>3</div>
+                    <div>4</div>
                     <img id="pitch" src={pitch} alt="court-pic"/>
                 </div>
                 </div>
