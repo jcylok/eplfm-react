@@ -30,11 +30,58 @@ const PlayerInfo = (props) => {
             </div>
             <div className="action">
                 <h3>Action</h3>
-                <div className="actionbuttons">
-                    <input type="submit" className="app-button" id="btnBuy" value="Buy"/>
-                    &nbsp;&nbsp;&nbsp;&nbsp;
-                    <input type="submit" className="app-button" id="btnSell" value="Sell"/>
+              <div className="actionbuttons">
+
+                <button type="button" className="btn btn-primary app-button" data-toggle="modal" data-target="#buy">
+                Buy
+                </button>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                <button type="button" className="btn btn-primary app-button" data-toggle="modal" data-target="#sell">
+                Sell
+                </button>
+              </div>
+
+                {/* buy modal */}
+                <div className="modal fade" id="buy" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div className="modal-dialog modal-dialog-centered" role="document">
+                    <div className="modal-content">
+                    <div className="modal-header">
+                        <h5 className="modal-title" id="exampleModalLongTitle">Confirm to buy this player?</h5>
+                        <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div className="modal-body">
+                        {props.infoNew.firstname} {props.infoNew.lastname}
+                    </div>
+                    <div className="modal-footer">
+                        <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" className="btn btn-primary">Save changes</button>
+                    </div>
+                    </div>
                 </div>
+                </div>
+                {/* sell modal */}
+                <div className="modal fade" id="sell" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div className="modal-dialog modal-dialog-centered" role="document">
+                    <div className="modal-content">
+                    <div className="modal-header">
+                        <h5 className="modal-title" id="exampleModalLongTitle">Confirm to sell this player?</h5>
+                        <button type="button" className="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div className="modal-body">
+                        {props.infoNew.firstname} {props.infoNew.lastname}
+                    </div>
+                    <div className="modal-footer">
+                        <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" className="btn btn-primary">Save changes</button>
+                    </div>
+                    </div>
+                </div>
+                </div>
+
             </div>
 
 

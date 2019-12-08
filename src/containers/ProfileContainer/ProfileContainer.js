@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import Profile from '../../components/Profile/Profile';
+import Team from '../../components/Team/Team';
+import './ProfileContainer.css';
 // import ProfileEditContainer from '../ProfileEditContainer/ProfileEditContainer';
 // import ProfileEditModal from '../../components/ProfileEditModal/ProfileEditModal';
 import axios from 'axios';
@@ -63,9 +65,12 @@ class ProfileContainer extends Component {
 
 
     render () {
-        if (localStorage.getItem('uid')) {
+        if (localStorage.getItem('uid') && this.state.profile.teamID) {
             return (
                 <>
+                <section id='teamname'>
+                    <h1>Team Name</h1>
+                </section>
                 <Profile 
                     profile={this.state.profile}
                     location={this.state.location}
@@ -74,8 +79,26 @@ class ProfileContainer extends Component {
                     handleChange={this.handleChange}
                     handleSubmit={this.handleSubmit}
                 />
-               </> 
+                <Team profile={this.state.profile} /> 
+               </>
             )            
+        } else if (localStorage.getItem('uid') && !this.state.profile.teamID) {
+            return (
+                <>
+                <section id='teamname'>
+                    <h1><button>Create Team</button></h1>
+                </section>
+                <Profile 
+                    profile={this.state.profile}
+                    location={this.state.location}
+                    dateJoined={this.state.dateJoined}
+                    profilePicture={this.state.profilePicture} 
+                    handleChange={this.handleChange}
+                    handleSubmit={this.handleSubmit}
+                />
+                <Team profile={this.state.profile} /> 
+               </>
+            )
         } else {
             return (
                 <>

@@ -1,0 +1,20 @@
+.sectionteam {
+    background: chartreuse;
+    margin-top: 50px;
+}
+
+.sectionteam > h2 {
+    text-align: center;
+    padding-top: 40px;
+}
+
+.tactics {
+    padding: 50px;
+    text-align: center;
+}
+
+#pitch {
+    width: 100%;
+    height: auto;
+    margin: 0;
+}

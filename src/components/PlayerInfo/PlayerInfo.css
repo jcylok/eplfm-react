@@ -18,19 +18,17 @@
 
 .action {
     text-align: center;
-    margin-top: 50px;
+    margin-top: 80px;
 }
 
 .actionbuttons {
     margin-top: 30px;
-
 }
 
 
-
-
 .playerstat {
-    margin-top: 50px;
+    margin-top: 100px;
+    text-align: center;
 }
 
 .playerstat h3 {
