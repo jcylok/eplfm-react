@@ -5,7 +5,7 @@ import './CreateTeam.css'
 const CreateTeam = (props) => {
 
         return (
-            <section id='teamname'>
+            <section id='teamnameC'>
                 <h1>Create Your Dream Team Today</h1>
                 <div>
                 <CreateTeamModal createTeamSubmit={props.createTeamSubmit} createName={props.createName} createTeamChange={props.createTeamChange}/>

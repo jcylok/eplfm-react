@@ -1,17 +1,28 @@
+#marketSection {
+    background: url(../../images/dribble.gif);
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.6);
+    background-attachment: fixed;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 1800vh;
+}
+
 .searchContainer {
     position: absolute;
     left: 50%;
     margin-left: -100px;
     /* background: chartreuse; */
-    margin-top: 150px;
+    /* margin-top: 150px; */
 }
 
 
 .resultContainer {
-    background: lightgray;
+    /* background: lightgray; */
     /* margin-left: 150px; */
-    margin-top: 250px;
+    /* margin-top: 250px; */
     text-align: center;
+    padding-top: 300px;
 }
 
 @media(max-width:767px) {

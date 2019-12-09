@@ -24,7 +24,35 @@
         "venue_address":"Filbert Way",
         "venue_city":"Leicester, Leicestershire",
         "venue_capacity":32262
+    },
+    {
+        "team_id":34,
+        "name":"Newcastle",
+        "code":null,
+        "logo":"https://www.api-football.com/public/teams/34.png",
+        "country":"England",
+        "founded":1892,
+        "venue_name":"St. James' Park",
+        "venue_surface":"grass",
+        "venue_address":"St. James&apos; Street",
+        "venue_city":"Newcastle upon Tyne",
+        "venue_capacity":52389
+    },
+    {
+        "team_id":47,
+        "name":"Tottenham",
+        "code":null,
+        "logo":"https://www.api-football.com/public/teams/47.png",
+        "country":"England",
+        "founded":1882,
+        "venue_name":"Tottenham Hotspur Stadium",
+        "venue_surface":"grass",
+        "venue_address":"Bill Nicholson Way, 748 High Road",
+        "venue_city":"London",
+        "venue_capacity":62062
     }
+
+
 ]
 
 

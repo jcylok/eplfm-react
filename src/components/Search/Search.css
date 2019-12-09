@@ -1,3 +1,22 @@
+#searchContainer {
+    margin-top: 200px;
+}
+
 #searchBar {
+    /* background: wheat; */
+    margin-right: 10px;
+    border-radius: 7px;
+}
+
+#searchbtn {
+    border-radius: 7px;
+}
+#searchbtn:hover {
     background: wheat;
+}
+
+#searchbtn:focus {outline:0;}
+
+input::-webkit-input-placeholder {
+    font-size: 15px;
 }

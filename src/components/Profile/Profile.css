@@ -1,10 +1,24 @@
 .sectionmanager {
     background: darkgray;
+    height: 450px;
+    margin-left: 70px;
+    margin-right: 70px;
+    border-radius: 20px;
+    box-shadow: 10px 10px 5px grey;
+}
+
+@media(max-width:767px) {
+    .sectionmanager {
+        height: 600px;
+        margin-left: 0px;
+        margin-right: 0px;
+    }
 }
 
 .sectionmanager > h2 {
     margin-top: 50px;
     text-align: center;
+    padding-top: 60px;
 }
 
 .manager-profile {
@@ -20,6 +34,12 @@
     text-align: center;
 }
 
+@media(max-width:767px) {
+    .managerinfo {
+        text-align: unset;
+    }
+}
+
 #secondline {
     margin-bottom: 30px;
 }
@@ -29,6 +49,12 @@ img {
     width: 50%;
     height: auto;
     margin: 0;
-    margin-top: 30px;
+    
     text-align: center;
+}
+
+@media(max-width:767px) {
+    img {
+        margin-top: 30px;
+    }
 }

@@ -1,5 +1,11 @@
 #teamname h1 {
     text-align: center;
-    margin-top: 50px;
+    /* margin-top: 70px; */
+    margin-bottom: 70px;
+    padding-top: 60px;
+}
+
+#test {
+    background: red;
 }
 

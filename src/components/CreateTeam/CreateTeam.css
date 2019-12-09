@@ -1,7 +1,8 @@
-#teamname h1 {
+#teamnameC h1 {
     text-align: center;
-    margin-top: 50px;
+    /* margin-top: 50px; */
     font-size: 30px;
+    padding-top: 60px;
 }
 
 #teamname div {

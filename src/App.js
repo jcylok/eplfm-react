@@ -3,7 +3,7 @@ import { withRouter } from 'react-router-dom';
 import Header from './components/Header/Header';
 import Routes from './config/routes';
 import axios from 'axios'
-// import Home from './components/Home';
+import '././components/App.css';
 // import LoginContainer from './containers/LoginContainer';
 
 

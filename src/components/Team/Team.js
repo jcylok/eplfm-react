@@ -23,11 +23,11 @@ const Team = (props) => {
                 
                 <div className="container">
                     <img id="pitch" src={pitch}  alt="Snow"/>
-                    <div className="bottom-left">Bottom Left</div>
-                    <div className="top-left">Top Left</div>
-                    <div className="top-right">Top Right</div>
-                    <div className="bottom-right">Bottom Right</div>
-                    <div className="centered">left mid &nbsp;&nbsp;&nbsp;&nbsp; Centered &nbsp;&nbsp;&nbsp;&nbsp; right mid</div>
+                    <div className="bottom">Bottom Left &nbsp;&nbsp;&nbsp;&nbsp; Bottom right</div>
+                    <div className="top">Top Left &nbsp;&nbsp;&nbsp;&nbsp; Top right</div>
+                    {/* <div className="top-right">Top Right</div> */}
+                    {/* <div className="bottom-right">Bottom Right</div> */}
+                    <div className="centered">left mid &nbsp;&nbsp;&nbsp;&nbsp; Centered &nbsp;&nbsp;&nbsp;&nbsp; right mid &nbsp;&nbsp;&nbsp;&nbsp; right mid 2 &nbsp;&nbsp;&nbsp;&nbsp; right mid 3</div>
                 </div>
 
 

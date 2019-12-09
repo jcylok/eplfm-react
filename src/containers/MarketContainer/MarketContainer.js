@@ -107,7 +107,7 @@ class MarketContainer extends React.Component {
         if (this.state.submitted){
             return this.state.response.map(object => {
                 return (
-                    <Results key={object.player_id} playerdata={object} />
+                    <Results key={object.player_id} playerdata={object} team={this.state.query} />
                 )
             })
         }
@@ -117,7 +117,7 @@ class MarketContainer extends React.Component {
     render () {
         console.log(teamSeed)
         return (
-            <>
+            <div id="marketSection">
                 <div className="searchContainer">
                     <Search handleInput={this.handleInput} handleSubmit={this.handleSubmit} />
                 </div>
@@ -125,7 +125,7 @@ class MarketContainer extends React.Component {
                     {this.displayResults()}
                 </div>
    
-            </>        
+            </div>        
         )
     }
 

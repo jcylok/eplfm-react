@@ -17,6 +17,10 @@ class ProfileContainer extends Component {
             location: '',
             profilePicture: '',
             createName: '',
+            forwarder: '',
+            midfielder: '',
+            defender: '',
+            goalkeeper: '',
         }
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -96,6 +100,21 @@ class ProfileContainer extends Component {
                  location: res.data.data.location,
                  profilePicture: res.data.data.profilePicture,
              });
+             // get team data
+             axios.get(`${process.env.REACT_APP_API_URL}/teams/${this.state.profile.teamNameURL}`,{
+                withCredentials: true,
+            })
+             .then((res) => {
+                 this.setState({
+                     forwarder: res.data.data.forwarder,
+                     midfielder: res.data.data.midfielder,
+                     defender: res.data.data.defender,
+                     goalkeeper: res.data.data.goalkeeper,
+                 });  
+             })
+             .catch((err) => console.log(err));
+    
+
          })
          .catch((err) => console.log(err));
 
@@ -106,7 +125,7 @@ class ProfileContainer extends Component {
         
         if (localStorage.getItem('uid') && this.state && this.state.profile.teamName) {
             return (
-                <>
+                <div id="test">
                 <section id='teamname'>
                     <h1>{this.state.profile.teamName}</h1>
                 </section>
@@ -120,18 +139,11 @@ class ProfileContainer extends Component {
                     
                 />
                 <Team profile={this.state.profile} /> 
-               </>
+               </div>
             )            
         } else if (localStorage.getItem('uid') && this.state && !this.state.profile.teamName) {
             return (
-                <>
-                {/* <section id='teamname'>
-                    <h1>Create Your Dream Team Today</h1>
-                    <div>
-                    <button>Start</button>
-                    </div>
-          
-                </section> */}
+                <div id="test">
                 <CreateTeam createTeamSubmit={this.createTeamSubmit} createName={this.state.createName} createTeamChange={this.createTeamChange}/>
                 <Profile 
                     profile={this.state.profile}
@@ -142,7 +154,7 @@ class ProfileContainer extends Component {
                     handleSubmit={this.handleSubmit}
                 />
                 <Team profile={this.state.profile} /> 
-               </>
+                </div>
             )
         } else {
             return (
