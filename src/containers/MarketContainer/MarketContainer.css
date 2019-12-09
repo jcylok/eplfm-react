@@ -1,8 +1,8 @@
 #marketSection {
     background: url(../../images/dribble.gif);
-    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.6);
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.8);
     background-attachment: fixed;
-    background-position: bottom;
+    background-position: top;
     background-repeat: no-repeat;
     background-size: cover;
     height: 1800vh;

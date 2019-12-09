@@ -3,7 +3,10 @@ import Search from "../../components/Search/Search";
 import Results from "../../components/Results/Results";
 import axios from "axios";
 import './MarketContainer.css';
-import teamSeed from '../../seed/team.json';
+// import teamSeed from '../../seed/team.json';
+const teamSeed = require('../../seed/team.json');
+console.log(teamSeed)
+
 
 class MarketContainer extends React.Component {
 
@@ -15,11 +18,16 @@ class MarketContainer extends React.Component {
     }
 
     nameToID = (name) => {
+        // console.log(teamSeed.length)
         let newName = name.replace(/ /g,'').toLowerCase();
-        for (let i=0; i<2; i++){
+        // console.log(newName)
+        for (let i=0; i<teamSeed.length; i++){
             if (newName === teamSeed[i].name) {
-                let test = teamSeed[i].team_id;
-                return test
+
+                let result = teamSeed[i].team_id;
+                console.log(result)
+                return result
+                
             }
         }
         return('oops')

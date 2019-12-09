@@ -17,10 +17,14 @@ class ProfileContainer extends Component {
             location: '',
             profilePicture: '',
             createName: '',
-            forwarder: '',
-            midfielder: '',
-            defender: '',
-            goalkeeper: '',
+            forwarder: [],
+            midfielder: [],
+            defender: [],
+            goalkeeper: [],
+            forwarderFull: [],
+            midfielderFull: [],
+            defenderFull: [],
+            goalkeeperFull: [],
         }
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -110,7 +114,37 @@ class ProfileContainer extends Component {
                      midfielder: res.data.data.midfielder,
                      defender: res.data.data.defender,
                      goalkeeper: res.data.data.goalkeeper,
-                 });  
+                 });
+                 // get user's players name and statistics
+                 const roles = ["forwarder", "midfielder", "defender", "goalkeeper"]
+                 for (let i=0; i<4; i++) {
+                     for (let j=0; j<this.state[roles[i]].length; j++) {
+
+                        axios({
+                            "method":"GET",
+                            "url":`https://api-football-v1.p.rapidapi.com/v2/players/player/${this.state[roles[i]][j]}/2018-2019`,
+                            "headers":{
+                            "content-type":"application/octet-stream",
+                            "x-rapidapi-host":"api-football-v1.p.rapidapi.com",
+                            "x-rapidapi-key":"ae34dc57cbmshfbd27c9d54b4ae0p157852jsnb36c3e4228b5"
+                            }
+                            })
+                            .then((response)=>{
+                              console.log(response.data.api.players[0])
+                              let full = roles[i] + "Full"
+                              console.log(full)
+                              console.log(this.state[full])
+                              this.setState({
+                                [this.state[full]]:  this.state[full].push(response.data.api.players[0])
+                              })
+                            })
+                            .catch((error)=>{
+                              console.log(error)
+                            })
+                         
+
+                     }
+                 }
              })
              .catch((err) => console.log(err));
     
@@ -138,7 +172,13 @@ class ProfileContainer extends Component {
                     handleSubmit={this.handleSubmit}
                     
                 />
-                <Team profile={this.state.profile} /> 
+                <Team 
+                    profile={this.state.profile}
+                    forwarderFull={this.state.forwarderFull}
+                    midfielderFull={this.state.midfielderFull}
+                    defenderFull={this.state.defenderFull}
+                    goalkeeperFull={this.state.goalkeeperFull}  
+                /> 
                </div>
             )            
         } else if (localStorage.getItem('uid') && this.state && !this.state.profile.teamName) {
@@ -153,7 +193,13 @@ class ProfileContainer extends Component {
                     handleChange={this.handleChange}
                     handleSubmit={this.handleSubmit}
                 />
-                <Team profile={this.state.profile} /> 
+                <Team 
+                    profile={this.state.profile}
+                    forwarderFull={this.state.forwarderFull}
+                    midfielderFull={this.state.midfielderFull}
+                    defenderFull={this.state.defenderFull}
+                    goalkeeperFull={this.state.goalkeeperFull}                
+                /> 
                 </div>
             )
         } else {

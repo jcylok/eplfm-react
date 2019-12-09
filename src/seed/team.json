@@ -27,7 +27,7 @@
     },
     {
         "team_id":34,
-        "name":"Newcastle",
+        "name":"newcastle",
         "code":null,
         "logo":"https://www.api-football.com/public/teams/34.png",
         "country":"England",
@@ -40,7 +40,7 @@
     },
     {
         "team_id":47,
-        "name":"Tottenham",
+        "name":"tottenham",
         "code":null,
         "logo":"https://www.api-football.com/public/teams/47.png",
         "country":"England",
