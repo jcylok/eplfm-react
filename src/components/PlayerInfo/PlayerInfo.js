@@ -52,11 +52,24 @@ const PlayerInfo = (props) => {
                         </button>
                     </div>
                     <div className="modal-body">
-                        {props.infoNew.firstname} {props.infoNew.lastname}
+                        <strong>{props.infoNew.firstname} {props.infoNew.lastname}</strong>
                     </div>
+                    <div>
+                        Position:
+                        <form action="myservlet.do" method="POST">
+                            <select name="buyPlayerPosition" id="buyPlayerPosition" onChange={props.roleChange}>
+                                <option value="forwarder" selected="selected">forwarder</option>
+                                {/* <option value="1">One</option> */}
+                                <option value="midfielder">midfielder</option>
+                                <option value="defender">defender</option>
+                                <option value="goalkeeper">goalkeeper</option>
+                            </select>
+                        </form>
+                    </div>   
                     <div className="modal-footer">
+
                         <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" className="btn btn-primary" onClick={() => props.buysubmitted()}>Save changes</button>
+                        <button type="button" className="btn btn-primary" onClick={() => props.buysubmitted()} data-dismiss="modal">Buy</button>
                     </div>
                     </div>
                 </div>
@@ -76,7 +89,7 @@ const PlayerInfo = (props) => {
                     </div>
                     <div className="modal-footer">
                         <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" className="btn btn-primary">Save changes</button>
+                        <button type="button" className="btn btn-primary" onClick={() => props.sellsubmitted()} data-dismiss="modal">Sell</button>
                     </div>
                     </div>
                 </div>
