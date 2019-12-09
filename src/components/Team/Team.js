@@ -8,20 +8,31 @@ const Team = (props) => {
             <div className="sectionteam">
                 <h2>Tactics</h2>
                 <div className="row team-profile">
-                <div className="col-sm tactics">
+                {/* <div className="col-sm tactics">
 
                     <h2>Squad</h2>
                     <p>123</p>
         
 
-                </div>
-                <div className="col-sm tactics visualization">
-                    <div>1</div>
-                    <div>2</div>
-                    <div>3</div>
-                    <div>4</div>
+                </div> */}
+                {/* <div className="col-sm tactics visualization">
                     <img id="pitch" src={pitch} alt="court-pic"/>
+                    <div id="example">This is my div</div>
+
+                </div> */}
+                
+                <div className="container">
+                    <img id="pitch" src={pitch}  alt="Snow"/>
+                    <div className="bottom-left">Bottom Left</div>
+                    <div className="top-left">Top Left</div>
+                    <div className="top-right">Top Right</div>
+                    <div className="bottom-right">Bottom Right</div>
+                    <div className="centered">left mid &nbsp;&nbsp;&nbsp;&nbsp; Centered &nbsp;&nbsp;&nbsp;&nbsp; right mid</div>
                 </div>
+
+
+
+
                 </div>
             </div>
         )

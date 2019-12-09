@@ -42,6 +42,8 @@ class PlayerContainer extends Component {
                 alert("You've already bought this player.")
             } else if (res.data.data.playerslist.length === 11) {
                 alert("You have 11 players in your team already.")
+            } else if (res.data.data.goalkeeper.length !== 0) {
+                alert("You can only have one Goalkeeper")
             } else {
                 let newList = [];
                 let tempJSON = res.data.data["playerslist"];
