@@ -7,11 +7,11 @@
     box-shadow: 10px 10px 5px grey;
 }
 
-@media(max-width:767px) {
+@media(max-width:470px) {
     .sectionmanager {
-        height: 700px;
-        margin-left: 0px;
-        margin-right: 0px;
+        height: 650px;
+        margin-left: 10px;
+        margin-right: 10px;
     }
 }
 
@@ -45,7 +45,7 @@
 }
 
 
-img {
+.managerinfo img {
     width: 50%;
     height: auto;
     margin: 0;

@@ -4,15 +4,29 @@
     /* margin-bottom: 100px; */
     width: auto;
     height: 400px;
-    margin-left: 150px;
-    margin-right: 150px;
+    margin-left: 100px;
+    margin-right: 100px;
     border-radius: 20px;
     box-shadow: 10px 10px 5px grey;
 }
 
+@media(max-width:470px) {
+    .sectionscore {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+  }
+
+
+
 .sectionscore h2 {
     text-align: center;
     padding-top: 30px;
+    padding-bottom: 20px;
+}
+
+.table-responsive {
+    width: 50%;
 }
 
 

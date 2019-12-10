@@ -22,7 +22,8 @@ const ScoreBoard = props => {
     for (let i=0; i<fStat.length; i++) {
         fTotal = fTotal + fStat[i].dribbles * 0.8 + fStat[i].duels * 0.8 + fStat[i].shots * 0.95 + fStat[i].goals * 0.95 + fStat[i].passes * 0.9 + fStat[i].tackles * 0.8
     }
-    console.log(Math.round(fTotal), "fTotal")
+    fTotal = Math.round(fTotal)
+    console.log(fTotal, "fTotal")
 
     // midfielder statistics
     let mStat = [];
@@ -43,7 +44,8 @@ const ScoreBoard = props => {
     for (let i=0; i<mStat.length; i++) {
         mTotal = mTotal + mStat[i].dribbles * 0.85 + mStat[i].duels * 0.85 + mStat[i].shots * 0.9 + mStat[i].goals * 0.9 + mStat[i].passes * 0.95 + mStat[i].tackles * 0.9
     }
-    console.log(Math.round(mTotal), "mTotal")
+    mTotal = Math.round(mTotal)
+    console.log(mTotal, "mTotal")
 
     // defender statistics
     let dStat = [];
@@ -64,12 +66,15 @@ const ScoreBoard = props => {
     for (let i=0; i<dStat.length; i++) {
         dTotal = dTotal + dStat[i].dribbles * 0.9 + dStat[i].duels * 0.9 + dStat[i].shots * 0.8 + dStat[i].goals * 0.8 + dStat[i].passes * 0.95 + dStat[i].tackles * 0.95
     }
-    console.log(Math.round(dTotal), "dTotal")
+    dTotal = Math.round(dTotal)
+    console.log(dTotal, "dTotal")
 
     // goalkeeper statistics
+    let goalkeeperLen = props.goalkeeperFull[0] && props.goalkeeperFull.length;
     let gStat = props.goalkeeperFull[0] && (
         props.goalkeeperFull[0].passes.accuracy + props.goalkeeperFull[0].passes.total - props.goalkeeperFull[0].goals.conceded 
     )
+    gStat = Math.round(gStat)
     console.log(gStat, "gStat")
 
 
@@ -80,52 +85,58 @@ const ScoreBoard = props => {
         
         <div className="container">
             {/* <h5 id="formation">Form: 123</h5> */}
-            <div class="table-responsive">
-  <table class="table">
-    <thead>
-      <tr>
-        <th scope="col">#</th>
-        <th scope="col">Heading</th>
-        <th scope="col">Heading</th>
-        <th scope="col">Heading</th>
-      
-       
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Cell</td>
-        <td>Cell</td>
-        <td>Cell</td>
+            <div classanem="table-responsive">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">Position</th>
+                        <th scope="col"># Player</th>
+                        <th scope="col">Score</th>
+                        {/* <th scope="col">Heading</th> */}
+                    
+                    
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th scope="row">Forwarder</th>
+                        <td>{forwarderLen}</td>
+                        <td>{fTotal}</td>
+                        {/* <td>Cell</td> */}
 
 
-  
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Cell</td>
-        <td>Cell</td>
-        <td>Cell</td>
+                
+                    </tr>
+                    <tr>
+                        <th scope="row">Midfielder</th>
+                        <td>{midfielderLen}</td>
+                        <td>{mTotal}</td>
+                        {/* <td>Cell</td> */}
 
-     
-    
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td>Cell</td>
-        <td>Cell</td>
-        <td>Cell</td>
-      </tr>
-      <tr>
-        <th scope="row">4</th>
-        <td>Cell</td>
-        <td>Cell</td>
-        <td>Cell</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+                    
+                    
+                    </tr>
+                    <tr>
+                        <th scope="row">Defender</th>
+                        <td>{defenderLen}</td>
+                        <td>{dTotal}</td>
+                        {/* <td>Cell</td> */}
+                    </tr>
+                    <tr>
+                        <th scope="row">Goalkeeper</th>
+                        <td>{goalkeeperLen}</td>
+                        <td>{gStat}</td>
+                        {/* <td>Cell</td> */}
+                    </tr>
+                    <tr>
+                        <th scope="row">Total</th>
+                        <td>{forwarderLen + midfielderLen + defenderLen + goalkeeperLen}</td>
+                        <td>{fTotal + mTotal + dTotal + gStat}</td>
+                        {/* <td>Cell</td> */}
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
             
 
         </div>

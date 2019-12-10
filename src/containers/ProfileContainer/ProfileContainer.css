@@ -10,3 +10,9 @@
     height: 400vh;
 }
 
+@media(max-width:470px) {
+    #test  {
+        height: 2300px;
+    }
+  }
+

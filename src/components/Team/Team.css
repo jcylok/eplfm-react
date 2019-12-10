@@ -2,19 +2,20 @@
     background: burlywood;
     margin-top: 100px;
     /* margin-bottom: 100px; */
-    width: auto;
-    height: 1000px;
-    margin-left: 150px;
-    margin-right: 150px;
+    /* width: auto;
+    height: 1000px; */
+    margin-left: 10%;
+    margin-right: 10%;
     border-radius: 20px;
     box-shadow: 10px 10px 5px grey;
 }
 
 
-@media(max-width:767px) {
+@media(max-width:470px) {
     .sectionteam {
-        margin-left: 0px;
-        margin-right: 0px;
+        margin-left: 10px;
+        margin-right: 10px;
+        height: 580px;
     }
 }
 
@@ -25,7 +26,7 @@
     
 }
 
-@media(max-width:767px) {
+@media(max-width:470px) {
     .sectionteam {
         /* height: 680px; */
     }
@@ -47,13 +48,16 @@
     position: relative;
 }
 
-/* #pitch {
-    width: 45%;
-    height: auto;
-    margin: 0;
+#pitch {
+   padding-bottom: 20px;
+   width: 50%;
+   /* height: auto; */
+   margin: 0;
+   
+   text-align: center;
 }
 
-@media(max-width:767px) {
+/* @media(max-width:767px) {
     #pitch{
         width: 80%;
     }
@@ -117,7 +121,7 @@ padding: 60px;
     padding: 60px;
 }
 
-@media(max-width:767px) {
+@media(max-width:470px) {
 
     .bottom {
         margin-top: 20px;
