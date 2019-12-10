@@ -47,7 +47,7 @@
     position: relative;
 }
 
-#pitch {
+/* #pitch {
     width: 45%;
     height: auto;
     margin: 0;
@@ -57,7 +57,7 @@
     #pitch{
         width: 80%;
     }
-}
+} */
 
 #example {
     transform: translate(20px,-500px);

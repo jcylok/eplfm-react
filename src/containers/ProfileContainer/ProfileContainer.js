@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Profile from '../../components/Profile/Profile';
 import Team from '../../components/Team/Team';
 import CreateTeam from '../../components/CreateTeam/CreateTeam';
+import ScoreBoard from  '../../components/ScoreBoard/ScoreBoard';
 import './ProfileContainer.css';
 // import ProfileEditContainer from '../ProfileEditContainer/ProfileEditContainer';
 // import ProfileEditModal from '../../components/ProfileEditModal/ProfileEditModal';
@@ -174,6 +175,12 @@ class ProfileContainer extends Component {
                 />
                 <Team 
                     profile={this.state.profile}
+                    forwarderFull={this.state.forwarderFull}
+                    midfielderFull={this.state.midfielderFull}
+                    defenderFull={this.state.defenderFull}
+                    goalkeeperFull={this.state.goalkeeperFull}  
+                /> 
+                <ScoreBoard 
                     forwarderFull={this.state.forwarderFull}
                     midfielderFull={this.state.midfielderFull}
                     defenderFull={this.state.defenderFull}

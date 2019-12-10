@@ -1,0 +1,20 @@
+.sectionscore {
+    background: burlywood;
+    margin-top: 100px;
+    /* margin-bottom: 100px; */
+    width: auto;
+    height: 400px;
+    margin-left: 150px;
+    margin-right: 150px;
+    border-radius: 20px;
+    box-shadow: 10px 10px 5px grey;
+}
+
+.sectionscore h2 {
+    text-align: center;
+    padding-top: 30px;
+}
+
+
+
+
