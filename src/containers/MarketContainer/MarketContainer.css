@@ -27,8 +27,8 @@
 
 @media(max-width:767px) {
     .resultContainer {
-        background: lightgray;
+        /* background: lightgray; */
         /* margin-left: 100px; */
-        margin-top: 250px;
+        /* margin-top: 250px; */
     }
 }

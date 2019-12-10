@@ -195,10 +195,10 @@ class ProfileContainer extends Component {
                 />
                 <Team 
                     profile={this.state.profile}
-                    forwarderFull={this.state.forwarderFull}
-                    midfielderFull={this.state.midfielderFull}
-                    defenderFull={this.state.defenderFull}
-                    goalkeeperFull={this.state.goalkeeperFull}                
+                    // forwarderFull={this.state.forwarderFull}
+                    // midfielderFull={this.state.midfielderFull}
+                    // defenderFull={this.state.defenderFull}
+                    // goalkeeperFull={this.state.goalkeeperFull}                
                 /> 
                 </div>
             )

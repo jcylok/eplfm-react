@@ -6,6 +6,7 @@ import './Team.css'
 const Team = (props) => {
     if (props.profile.teamID) {
         return (
+            
             <div className="sectionteam">
                 <h2>Tactics</h2>
                 <div className="row team-profile">
@@ -23,16 +24,16 @@ const Team = (props) => {
                 </div> */}
                 
                 <div className="container">
+                    <h5 id="formation">Form: {props.defenderFull.length}-{props.midfielderFull.length}-{props.forwarderFull.length}</h5>
                     <img id="pitch" src={pitch}  alt="Snow"/>
-                    {/* <div className="top">Top Left &nbsp;&nbsp;&nbsp;&nbsp; Top right</div> */}
                     <div className="top"><Lineup line={props.forwarderFull}/></div>
-                    <div className="centered">left mid &nbsp;&nbsp;&nbsp;&nbsp; Centered &nbsp;&nbsp;&nbsp;&nbsp; right mid &nbsp;&nbsp;&nbsp;&nbsp; right mid 2 &nbsp;&nbsp;&nbsp;&nbsp; right mid 3</div>
-                    <div className="bottom">Bottom Left &nbsp;&nbsp;&nbsp;&nbsp; Bottom right</div>
-                    <div className="goalkeeper">Keeper</div>
+                    <div className="centered"><Lineup line={props.midfielderFull}/></div>
+                    <div className="bottom"><Lineup line={props.defenderFull}/></div>
+                    <div className="goalkeeper"><Lineup line={props.goalkeeperFull}/></div>
                 </div>
-                <div className="formation">
-                    <h5>Formation: 3-5-2</h5>
-                </div>
+                {/* <div className="formation">
+                    <h5>Form: {props.defenderFull.length}-{props.midfielderFull.length}-{props.forwarderFull.length}</h5>
+                </div> */}
 
 
 

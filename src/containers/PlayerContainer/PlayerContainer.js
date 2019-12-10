@@ -42,7 +42,7 @@ class PlayerContainer extends Component {
                 alert("You've already bought this player.")
             } else if (res.data.data.playerslist.length === 11) {
                 alert("You have 11 players in your team already.")
-            } else if (res.data.data.goalkeeper.length !== 0) {
+            } else if (res.data.data.goalkeeper.length !== 0 && this.state.buyPlayerPosition === "goalkeeper" ) {
                 alert("You can only have one Goalkeeper")
             } else {
                 let newList = [];
