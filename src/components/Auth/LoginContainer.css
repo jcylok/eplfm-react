@@ -1,0 +1,24 @@
+.login {
+    padding-top: 150px ;
+}
+
+.loginsection {
+    background: chartreuse;
+    height: 100vh;
+    background: url(../../images/dribble.gif);
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.7);
+    background-attachment: fixed;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* height: 1800vh; */
+}
+
+#login-button {
+    margin-top: 30px;
+}
+
+.form-control-lg {
+    background: rgba(0,0,0,.3);
+}
+
