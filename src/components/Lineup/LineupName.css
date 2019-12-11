@@ -1,4 +1,20 @@
 .singleName {
     padding: 20px;
-    color: black;
+    /* color: black; */
+    color: lightgoldenrodyellow;
+    text-decoration: none;
+}
+.singleName:hover, .singleName:focus {
+    padding: 20px;
+    /* color: black; */
+    color: gold;
+    text-decoration: none;
+    
+}
+
+@media(max-width:470px) {
+    .singleName {
+        padding: 3px;
+        font-size: 7px;
+    }
 }

@@ -3,10 +3,17 @@
     /* margin-top: 70px; */
     margin-bottom: 70px;
     padding-top: 60px;
+    margin-top: 70px;
 }
 
 #test {
-    background: red;
+    background: url(../../images/team.gif);
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.6);
+    /* box-shadow: inset 0 0 0 1000px rgba(56,0,60,.7); */
+    background-attachment: fixed;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
     height: 400vh;
 }
 

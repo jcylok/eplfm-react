@@ -74,7 +74,7 @@ const ScoreBoard = props => {
     let gStat = props.goalkeeperFull[0] && (
         props.goalkeeperFull[0].passes.accuracy + props.goalkeeperFull[0].passes.total - props.goalkeeperFull[0].goals.conceded 
     )
-    gStat = Math.round(gStat)
+    gStat = Math.round(gStat) || 0
     console.log(gStat, "gStat")
 
 
@@ -100,8 +100,8 @@ const ScoreBoard = props => {
                     <tbody>
                     <tr>
                         <th scope="row">Forwarder</th>
-                        <td>{forwarderLen}</td>
-                        <td>{fTotal}</td>
+                        <td>{forwarderLen || 0}</td>
+                        <td><span className="final-score">{fTotal}</span></td>
                         {/* <td>Cell</td> */}
 
 
@@ -109,8 +109,8 @@ const ScoreBoard = props => {
                     </tr>
                     <tr>
                         <th scope="row">Midfielder</th>
-                        <td>{midfielderLen}</td>
-                        <td>{mTotal}</td>
+                        <td>{midfielderLen || 0}</td>
+                        <td><span className="final-score">{mTotal}</span></td>
                         {/* <td>Cell</td> */}
 
                     
@@ -118,20 +118,20 @@ const ScoreBoard = props => {
                     </tr>
                     <tr>
                         <th scope="row">Defender</th>
-                        <td>{defenderLen}</td>
-                        <td>{dTotal}</td>
+                        <td>{defenderLen || 0}</td>
+                        <td><span className="final-score">{dTotal}</span></td>
                         {/* <td>Cell</td> */}
                     </tr>
                     <tr>
                         <th scope="row">Goalkeeper</th>
-                        <td>{goalkeeperLen}</td>
-                        <td>{gStat}</td>
+                        <td>{goalkeeperLen || 0}</td>
+                        <td><span className="final-score">{gStat}</span></td>
                         {/* <td>Cell</td> */}
                     </tr>
                     <tr>
                         <th scope="row">Total</th>
-                        <td>{forwarderLen + midfielderLen + defenderLen + goalkeeperLen}</td>
-                        <td>{fTotal + mTotal + dTotal + gStat}</td>
+                        <td>{(forwarderLen + midfielderLen + defenderLen + goalkeeperLen) || 0}</td>
+                        <td><span className="ultimate-score">{fTotal + mTotal + dTotal + gStat}</span></td>
                         {/* <td>Cell</td> */}
                     </tr>
                     </tbody>

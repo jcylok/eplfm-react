@@ -1,10 +1,12 @@
 .sectionmanager {
-    background: darkgray;
+    /* background: darkgray; */
+    background: rgba(0,0,0,.9);
     height: 450px;
     margin-left: 150px;
     margin-right: 150px;
     border-radius: 20px;
-    box-shadow: 10px 10px 5px grey;
+    box-shadow: 4px 4px 10px palegoldenrod;
+    /* border: 0.5px solid palegoldenrod; */
 }
 
 @media(max-width:470px) {
@@ -16,13 +18,13 @@
 }
 
 .sectionmanager > h2 {
-    margin-top: 50px;
+    color: #00ff85;
     text-align: center;
     padding-top: 60px;
 }
 
 .manager-profile {
-    margin-top: 100px;
+    margin-top: 40px;
     margin-left: 50px;
 }
 
@@ -49,12 +51,14 @@
     width: 50%;
     height: auto;
     margin: 0;
-    
+    margin-top: 30px;
     text-align: center;
+    
 }
 
-@media(max-width:767px) {
-    img {
-        margin-top: 30px;
+@media(max-width:470px) {
+    .managerinfo img {
+        margin-top: 80px;
+        margin-left: 50px;
     }
 }

@@ -24,7 +24,7 @@
 
 .player-info h2 {
     margin-bottom: 30px;
-    color: yellowgreen;
+    color: #00ff85;
 }
 
 .shirt {
@@ -41,7 +41,7 @@
     padding-right: 150px;
 }
 .playerdetails p{
-    color: white;
+    color: floralwhite;
 }
 
 
@@ -65,6 +65,10 @@
     }
   }
 
+  .playerbasic {
+      color: goldenrod
+  }
+
 
 .action {
     text-align: center;
@@ -73,10 +77,11 @@
     background: black;
     padding-top: 100px;
     padding-bottom: 100px;
+    border: 0.5px solid palegoldenrod;
 }
 
 .action h3 {
-    color: yellowgreen;
+    color: #00ff85;
 }
 
 @media(max-width: 470px) {
@@ -87,6 +92,18 @@
 
 .actionbuttons {
     margin-top: 30px;
+}
+
+.app-button {
+    border-color: floralwhite;
+    color: white;
+}
+.app-button:hover {
+    /* border-color: rebeccapurple; */
+    /* background: rgba(56,0,60,0.7); */
+    color: palegoldenrod;
+    border-color: palegoldenrod;
+
 }
 
 
@@ -105,7 +122,20 @@
 }
 
 .playerstat h3 {
+    color: #00ff85;
     text-align: center;
     margin-bottom: 50px;
+}
+
+.playerstat > .container > p {
+    color: darkgoldenrod;
+}
+
+.playerstat .table thead th {
+    color: floralwhite;
+}
+
+.playerstat .table td {
+    color: floralwhite;
 }
 

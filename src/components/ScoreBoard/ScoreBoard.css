@@ -1,5 +1,11 @@
 .sectionscore {
-    background: burlywood;
+    /* background: burlywood; */
+    background: rgba(0,0,0,.9);
+    
+    margin-left: 150px;
+    margin-right: 150px;
+    border-radius: 20px;
+    box-shadow: 4px 4px 10px palegoldenrod;
     margin-top: 100px;
     /* margin-bottom: 100px; */
     width: auto;
@@ -7,7 +13,7 @@
     margin-left: 100px;
     margin-right: 100px;
     border-radius: 20px;
-    box-shadow: 10px 10px 5px grey;
+    /* box-shadow: 10px 10px 5px grey; */
 }
 
 @media(max-width:470px) {
@@ -20,6 +26,7 @@
 
 
 .sectionscore h2 {
+    color: #00ff85;
     text-align: center;
     padding-top: 30px;
     padding-bottom: 20px;
@@ -28,6 +35,25 @@
 .table-responsive {
     width: 50%;
 }
+
+.sectionscore .table th, .sectionscore .table td {
+    color: white;
+    border-top: 0px solid #dee2e6;
+}
+
+.table p {
+    color: darkgoldenrod
+}
+
+.final-score {
+    color: lightgoldenrodyellow;
+}
+
+.ultimate-score {
+    font-size: 25px;
+    color: goldenrod;
+}
+
 
 
 

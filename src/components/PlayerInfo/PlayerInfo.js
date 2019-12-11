@@ -27,13 +27,13 @@ const PlayerInfo = (props) => {
             <div className="col-sm playerdetails">
 
                 <h2>{props.infoNew.firstname} {props.infoNew.lastname}</h2>
-                <p><strong>Position:</strong> {props.infoNew.position}</p>
-                <p><strong>Current Team:</strong> {props.infoNew.team_name}</p>
-                <p><strong>Height:</strong> {props.infoNew.height}</p>
-                <p><strong>Weight:</strong> {props.infoNew.weight}</p>
-                <p><strong>Birth Date:</strong> {props.infoNew.birth_date}</p>
-                <p><strong>Nationality:</strong> {props.infoNew.nationality}</p>
-                <p><strong>Rating:</strong> {props.infoNew.rating? props.infoNew.rating:"Not available"}</p>
+                <p><strong>Position:</strong> <span className="playerbasic">&nbsp;&nbsp;&nbsp;{props.infoNew.position? props.infoNew.position:"N/A"}</span></p>
+                <p><strong>Current Team:</strong><span className="playerbasic">&nbsp;&nbsp;&nbsp;{props.infoNew.team_name? props.infoNew.team_name:"N/A"}</span></p>
+                <p><strong>Height:</strong><span className="playerbasic">&nbsp;&nbsp;&nbsp;{props.infoNew.height? props.infoNew.heightL:"N/A"}</span></p>
+                <p><strong>Weight:</strong><span className="playerbasic">&nbsp;&nbsp;&nbsp;{props.infoNew.weight? props.infoNew.weight:"N/A"}</span></p>
+                <p><strong>Birth Date:</strong> <span className="playerbasic">&nbsp;&nbsp;&nbsp;{props.infoNew.birth_date? props.infoNew.birth_date:"N/A"}</span></p>
+                <p><strong>Nationality:</strong><span className="playerbasic">&nbsp;&nbsp;&nbsp;{props.infoNew.nationality? props.infoNew.nationality:"N/A"}</span></p>
+                <p><strong>Rating:</strong><span className="playerbasic">&nbsp;&nbsp;&nbsp;{props.infoNew.rating? props.infoNew.rating:"N/A"}</span></p>
 
 
             </div>
@@ -43,11 +43,11 @@ const PlayerInfo = (props) => {
                 <h3>Action</h3>
               <div className="actionbuttons">
 
-                <button type="button" className="btn btn-primary app-button" data-toggle="modal" data-target="#buy">
+                <button type="button" className="btn app-button" data-toggle="modal" data-target="#buy">
                 Buy
                 </button>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <button type="button" className="btn btn-primary app-button" data-toggle="modal" data-target="#sell">
+                <button type="button" className="btn app-button" data-toggle="modal" data-target="#sell">
                 Sell
                 </button>
               </div>
@@ -115,7 +115,7 @@ const PlayerInfo = (props) => {
             <div className="row playerstat">
             <div className="container">
                 <h3>Player's Statistics</h3>
-                <p>The data will be updates once a week:</p>            
+                <p>The data will be updated once a week:</p>            
                 <table className="table table-striped">
                     <thead>
                     <tr>
@@ -130,48 +130,66 @@ const PlayerInfo = (props) => {
                     <tr>
                         <td>Dribbles</td>
                         <td><p>attempts:</p><p>success:</p></td>
-                        <td><p>{props.infoOld && props.infoOld.dribbles && props.infoOld.dribbles.attempts}</p><p>{props.infoOld && props.infoOld.dribbles && props.infoOld.dribbles.success}</p></td>
-                        <td><p>{props.infoNew && props.infoNew.dribbles && props.infoNew.dribbles.attempts}</p><p>{props.infoNew && props.infoNew.dribbles && props.infoNew.dribbles.success}</p></td>
+                        <td><p>{(props.infoOld && props.infoOld.dribbles && props.infoOld.dribbles.attempts) || 0}</p>
+                            <p>{(props.infoOld && props.infoOld.dribbles && props.infoOld.dribbles.success) || 0}</p></td>
+                        <td><p>{(props.infoNew && props.infoNew.dribbles && props.infoNew.dribbles.attempts) || 0}</p>
+                            <p>{(props.infoNew && props.infoNew.dribbles && props.infoNew.dribbles.success) || 0}</p></td>
                         {/* <td>Passes</td> */}
   
                     </tr>
                     <tr>
                         <td>Duels</td>
                         <td><p>total:</p><p>won:</p></td>
-                        <td><p>{props.infoOld && props.infoOld.duels && props.infoOld.duels.total}</p><p>{props.infoOld && props.infoOld.duels && props.infoOld.duels.won}</p></td>
-                        <td><p>{props.infoNew && props.infoNew.duels && props.infoNew.duels.total}</p><p>{props.infoNew && props.infoNew.duels && props.infoNew.duels.won}</p></td>
+                        <td><p>{(props.infoOld && props.infoOld.duels && props.infoOld.duels.total) || 0}</p>
+                            <p>{(props.infoOld && props.infoOld.duels && props.infoOld.duels.won) || 0}</p></td>
+                        <td><p>{(props.infoNew && props.infoNew.duels && props.infoNew.duels.total) || 0}</p>
+                            <p>{(props.infoNew && props.infoNew.duels && props.infoNew.duels.won) || 0}</p></td>
                         {/* <td>Passes</td> */}
                
                     </tr>
                     <tr>
                         <td>Shots</td>
                         <td><p>on:</p><p>total:</p></td>
-                        <td><p>{props.infoOld && props.infoOld.shots && props.infoOld.shots.on}</p><p>{props.infoOld && props.infoOld.shots && props.infoOld.shots.total}</p></td>
-                        <td><p>{props.infoNew && props.infoNew.shots && props.infoNew.shots.on}</p><p>{props.infoNew && props.infoNew.shots && props.infoNew.shots.total}</p></td>
+                        <td><p>{(props.infoOld && props.infoOld.shots && props.infoOld.shots.on) || 0}</p>
+                            <p>{(props.infoOld && props.infoOld.shots && props.infoOld.shots.total) || 0}</p></td>
+                        <td><p>{(props.infoNew && props.infoNew.shots && props.infoNew.shots.on) || 0}</p>
+                            <p>{(props.infoNew && props.infoNew.shots && props.infoNew.shots.total) || 0}</p></td>
                         {/* <td>Passes</td> */}
            
                     </tr>
                     <tr>
                         <td>Goals</td>
                         <td><p>assists:</p><p>conceded:</p><p>total:</p></td>
-                        <td><p>{props.infoOld && props.infoOld.goals && props.infoOld.goals.assists}</p><p>{props.infoOld && props.infoOld.goals && props.infoOld.goals.conceded}</p><p>{props.infoOld && props.infoOld.goals && props.infoOld.goals.total}</p></td>
-                        <td><p>{props.infoNew && props.infoNew.goals && props.infoNew.goals.assists}</p><p>{props.infoNew && props.infoNew.goals && props.infoNew.goals.conceded}</p><p>{props.infoNew && props.infoNew.goals && props.infoNew.goals.total}</p></td>
+                        <td><p>{(props.infoOld && props.infoOld.goals && props.infoOld.goals.assists) || 0}</p>
+                            <p>{(props.infoOld && props.infoOld.goals && props.infoOld.goals.conceded) || 0}</p>
+                            <p>{(props.infoOld && props.infoOld.goals && props.infoOld.goals.total) || 0}</p></td>
+                        <td><p>{(props.infoNew && props.infoNew.goals && props.infoNew.goals.assists) || 0}</p>
+                            <p>{(props.infoNew && props.infoNew.goals && props.infoNew.goals.conceded) || 0}</p>
+                            <p>{(props.infoNew && props.infoNew.goals && props.infoNew.goals.total) || 0}</p></td>
                         {/* <td>Passes</td> */}
      
                     </tr>
                     <tr>
                         <td>Passes</td>
                         <td><p>accuracy:</p><p>key:</p><p>total:</p></td>
-                        <td><p>{props.infoOld && props.infoOld.passes && props.infoOld.passes.accuracy}</p><p>{props.infoOld && props.infoOld.passes && props.infoOld.passes.key}</p><p>{props.infoOld && props.infoOld.passes && props.infoOld.passes.total}</p></td>
-                        <td><p>{props.infoNew && props.infoNew.passes && props.infoNew.passes.accuracy}</p><p>{props.infoNew && props.infoNew.passes && props.infoNew.passes.key}</p><p>{props.infoNew && props.infoNew.passes && props.infoNew.passes.total}</p></td>
+                        <td><p>{(props.infoOld && props.infoOld.passes && props.infoOld.passes.accuracy) || 0}</p>
+                            <p>{(props.infoOld && props.infoOld.passes && props.infoOld.passes.key) || 0}</p>
+                            <p>{(props.infoOld && props.infoOld.passes && props.infoOld.passes.total) || 0}</p></td>
+                        <td><p>{(props.infoNew && props.infoNew.passes && props.infoNew.passes.accuracy) || 0}</p>
+                            <p>{(props.infoNew && props.infoNew.passes && props.infoNew.passes.key) || 0}</p>
+                            <p>{(props.infoNew && props.infoNew.passes && props.infoNew.passes.total) || 0}</p></td>
                         {/* <td>Passes</td> */}
         
                     </tr>
                     <tr>
                         <td>Tackles</td>
                         <td><p>blocks:</p><p>interceptions:</p><p>total:</p></td>
-                        <td><p>{props.infoOld && props.infoOld.tackles && props.infoOld.tackles.blocks}</p><p>{props.infoOld && props.infoOld.tackles && props.infoOld.tackles.interceptions}</p><p>{props.infoOld && props.infoOld.tackles && props.infoOld.tackles.total}</p></td>
-                        <td><p>{props.infoNew && props.infoNew.tackles && props.infoNew.tackles.blocks}</p><p>{props.infoNew && props.infoNew.tackles && props.infoNew.tackles.interceptions}</p><p>{props.infoNew && props.infoNew.tackles && props.infoNew.tackles.total}</p></td>
+                        <td><p>{(props.infoOld && props.infoOld.tackles && props.infoOld.tackles.blocks) || 0}</p>
+                            <p>{(props.infoOld && props.infoOld.tackles && props.infoOld.tackles.interceptions) || 0}</p>
+                            <p>{(props.infoOld && props.infoOld.tackles && props.infoOld.tackles.total) || 0}</p></td>
+                        <td><p>{(props.infoNew && props.infoNew.tackles && props.infoNew.tackles.blocks) || 0}</p>
+                            <p>{(props.infoNew && props.infoNew.tackles && props.infoNew.tackles.interceptions) || 0}</p>
+                            <p>{(props.infoNew && props.infoNew.tackles && props.infoNew.tackles.total) || 0}</p></td>
                         {/* <td>Passes</td> */}
                   
                     </tr>
