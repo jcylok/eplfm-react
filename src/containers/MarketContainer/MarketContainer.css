@@ -12,6 +12,7 @@
     position: absolute;
     left: 50%;
     margin-left: -100px;
+    z-index: 200;
     /* background: chartreuse; */
     /* margin-top: 150px; */
 }
@@ -23,6 +24,7 @@
     /* margin-top: 250px; */
     text-align: center;
     padding-top: 300px;
+    
 }
 
 @media(max-width:767px) {

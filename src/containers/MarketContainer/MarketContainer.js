@@ -129,9 +129,12 @@ class MarketContainer extends React.Component {
                 <div className="searchContainer">
                     <Search handleInput={this.handleInput} handleSubmit={this.handleSubmit} />
                 </div>
+                <div className="fixedcon">
                 <div className="row resultContainer">                 
                     {this.displayResults()}
                 </div>
+                </div>
+               
    
             </div>        
         )

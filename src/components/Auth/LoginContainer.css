@@ -16,9 +16,21 @@
 
 #login-button {
     margin-top: 30px;
+    background: rgba(0,0,0,.3);
+    border-color: white !important;
 }
 
-.form-control-lg {
+#login-button:hover {
+    /* margin-top: 30px; */
+    background: rgba(0,0,0,.6);
+    
+}
+
+.form-control-lg, .form-control:focus {
     background: rgba(0,0,0,.3);
+}
+
+.form-control-lg:hover {
+    background: rgba(0,0,0,.6);
 }
 

@@ -1,13 +1,76 @@
+#plbg {
+    height: 55px;
+    width: auto;
+    margin: 0;
+}
+
+#nav-title {
+    
+    padding-left: 30px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
 .title-color{
     color: purple !important;
     /* font-family: 'Calistoga', cursive; */
 }
 
 .navbar-color{
-    background-color: whitesmoke !important;
+    /* background-color: whitesmoke !important; */
+    background: rgba(0,0,0,1);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 200;
+
 }
 
-.btn-warning {
+
+.navbutton {
+    color: rgba(0,255,133, 0.5);
+    padding: 15px;
+    -moz-transition: color 1s; /* Firefox */
+    -webkit-transition: color 1s; /* Safari and Chrome */
+    -o-transition: color 1s; /* Opera */
+    transition: color 1s;
+}
+.navbutton:hover {
+    color: rgba(0,255,133, 1);
+    padding: 15px;
+    text-decoration: none;
+}
+
+.navbuttonlogout {
+    background-color: rgba(0,255,133, 0.5);
+    color: rgba(56,0,60,0.7);
+    padding: 8px;
+    margin-left: 12px;
+    border-radius: 4px;
+    -moz-transition: background-color 1s; /* Firefox */
+    -webkit-transition: background-color 1s; /* Safari and Chrome */
+    -o-transition: background-color 1s; /* Opera */
+    transition: background-color 1s;
+}
+
+.navbuttonlogout:hover {
+    background-color: rgba(0,255,133, 1);
+    color: rgba(56,0,60,1);
+    padding: 8px;
+    text-decoration: none;
+    
+}
+
+@media(max-width:470px) {
+    .navbuttonlogout {
+        margin-left: 0;
+    }
+
+}
+
+
+
+/* .btn-warning {
     color: purple;
     font-family: 'Calistoga', cursive;
     background-color: transparent;
@@ -42,9 +105,9 @@
 .supreme-emperor12{
     text-shadow: 2px 2px 3px gray;
     padding-right: 30px;
-}
+} */
 
-.navbar-dark .navbar-toggler {
+/* .navbar-dark .navbar-toggler {
     color: purple;
     border-color: purple;
-}
+} */

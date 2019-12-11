@@ -1,6 +1,8 @@
 import React from "react";
 import './Search.css'
 
+
+
 const Search = props => {
     return (
         <form onSubmit={props.handleSubmit} id="searchContainer" >
