@@ -1,0 +1,19 @@
+.createteam-header {
+    background: palegoldenrod;
+}
+
+.createteam-body {
+    background: lightgoldenrodyellow;
+}
+
+#createteam-teamname {
+    color: black;
+}
+
+#confirm-create {
+    background: goldenrod;
+}
+
+#confirm-create:hover {
+    background: yellow;;
+}

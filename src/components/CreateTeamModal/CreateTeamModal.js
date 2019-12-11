@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
-
-// import './PostDeleteModal.css'
+import './CreateTeamModal.css';
 
 function CreateTeamModal (props) {
   const [show, setShow] = useState(false);
@@ -16,20 +15,20 @@ function CreateTeamModal (props) {
       </button>
 
       <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>Create Team</Modal.Title>
+        <Modal.Header className="createteam-header" closeButton>
+          <Modal.Title >Create Team</Modal.Title>
         </Modal.Header>
-        <Modal.Body>
+        <Modal.Body className="createteam-body">
           <div className="container mt-4">
             <div className="row">
               <div className="col-sm">
                 <form onSubmit={props.createTeamSubmit}>
                     <div className="form-group">
-                        <label htmlFor="location">Team Name</label>
-                        <input onChange={props.handleChange} className="form-control form-control-lg" type="text" id="location" name="createName" value={props.createName} />
+                        <label htmlFor="location"><span id="createteam-teamname">Team Name: </span></label>
+                        <input onChange={props.createTeamChange} className="form-control form-control-lg" type="text" id="createName" name="createName" value={props.createName} />
                     </div>
-                  <button id="confirm-delete" onClick={handleClose} className="btn btn-primary" type="submit">Save</button>
-                  <div id="cancel-button" onClick={handleClose} className="btn btn-primary">Cancel</div>
+                  {/* <div id="cancel-button" onClick={handleClose} className="btn">Cancel</div> */}
+                  <button id="confirm-create" onClick={handleClose} className="btn" type="submit">Save</button>
                 </form>
               </div>
             </div>

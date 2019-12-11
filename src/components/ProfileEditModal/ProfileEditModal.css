@@ -9,3 +9,22 @@
     border-bottom: 0.5px solid palegoldenrod;
     color: palegoldenrod;
 }
+
+.user-edit-header {
+    background: palegoldenrod;
+}
+
+.user-edit-body {
+    background: floralwhite;
+}
+
+.useredit-label {
+    color: black;
+}
+
+#useredit-save {
+    background: palegoldenrod;
+}
+#useredit-save:hover {
+    background: goldenrod;
+}

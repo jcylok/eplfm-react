@@ -65,33 +65,38 @@ class ProfileContainer extends Component {
         event.preventDefault();
         console.log('create team submitted')
         console.log( event.target.value)
-        axios.post(`${process.env.REACT_APP_API_URL}/teams/`, {
-            user: localStorage.getItem('uid'),
-            name: this.state.createName,
-            nameURL: this.state.createName.replace(/ /g,'').toLowerCase()
-        })
-        .then((res) => {
-        //   this.props.history.push('/myteam')
-          console.log(res)
-
-          axios.put(`${process.env.REACT_APP_API_URL}/users/${localStorage.getItem('uid')}`, 
-          {
-              teamID: res.data.data._id,
-              teamName: res.data.data.name,
-              teamNameURL: res.data.data.nameURL
-          }, 
-          {
-            withCredentials: true,
-          })
+        if (event.target.value === "") {
+            alert("Invalid Input");
+        } else {
+            axios.post(`${process.env.REACT_APP_API_URL}/teams/`, {
+                user: localStorage.getItem('uid'),
+                name: this.state.createName,
+                nameURL: this.state.createName.replace(/ /g,'').toLowerCase()
+            })
             .then((res) => {
-                this.componentDidMount();
-                this.props.history.push('/myteam');
+            //   this.props.history.push('/myteam')
+              console.log(res)
+    
+              axios.put(`${process.env.REACT_APP_API_URL}/users/${localStorage.getItem('uid')}`, 
+              {
+                  teamID: res.data.data._id,
+                  teamName: res.data.data.name,
+                  teamNameURL: res.data.data.nameURL
+              }, 
+              {
+                withCredentials: true,
+              })
+                .then((res) => {
+                    this.componentDidMount();
+                    this.props.history.push('/myteam');
+                })
+                .catch((err) => console.log(err)); 
+    
             })
             .catch((err) => console.log(err)); 
+            
+        }
 
-        })
-        .catch((err) => console.log(err)); 
-    
     }
 
     componentDidMount() {

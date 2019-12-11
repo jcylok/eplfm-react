@@ -7,7 +7,7 @@
     margin-top: 70px;
     font-size: 30px;
     padding-top: 60px;
-    color: goldenrod;
+    color: palegoldenrod;
 }
 
 #teamname div {
@@ -15,20 +15,20 @@
 }
 
 #start {
-    margin-top: 70px;
+    margin-top: 20px;
     margin-bottom: 70px;
     border: 1px solid palegoldenrod;
     background: none;
     color: white;
-    padding: 20px;
+    padding: 15px;
 }
 
 #start:hover {
-    margin-top: 70px;
+    margin-top: 20px;
     margin-bottom: 70px;
     border: 2px solid palegoldenrod;
     background: none;
     color: palegoldenrod;
-    padding: 20px;
+    padding: 15px;
     background: rgba(0,0,0,.6);
 }

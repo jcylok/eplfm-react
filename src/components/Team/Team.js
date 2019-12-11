@@ -12,7 +12,7 @@ const Team = (props) => {
                 <div className="row team-profile">
                 
                 <div className="container">
-                    <h5 id="formation">Form: {props.defenderFull.length}-{props.midfielderFull.length}-{props.forwarderFull.length}</h5>
+                    <h5 id="formation">Form: {props.defenderFull.length || 0}-{props.midfielderFull.length || 0}-{props.forwarderFull.length || 0}</h5>
                     <img id="pitch" src={pitch}  alt="Snow"/>
                     <div className="top"><Lineup line={props.forwarderFull}/></div>
                     <div className="centered"><Lineup line={props.midfielderFull}/></div>
