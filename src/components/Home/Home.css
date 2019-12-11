@@ -1,4 +1,36 @@
 .homesection {
-    background: red;
-    height: 700vh;
+    /* background: red; */
+    height: 120vh;
+    background: url(../../images/klopp.jpg);
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.7);
+    /* box-shadow: inset 0 0 0 1000px rgba(56,0,60,.7); */
+    background-attachment: fixed;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* margin-top: 500px; */
+}
+
+.container2 {
+    text-align:center;
+    padding-top: 350px;
+}
+.inlineblock { 
+    display: inline-block;
+    /* zoom: 1; */
+    /* display: inline; */
+    background: rgba(0,0,0,.6);
+    color: grey;
+}
+
+.inlineblock h2 {
+    font-size: 50px;
+    padding: 20px;
+}
+.inlineblock p {
+    font-size: 20px;
+}
+
+.super-title {
+    color: lightgoldenrodyellow;
 }

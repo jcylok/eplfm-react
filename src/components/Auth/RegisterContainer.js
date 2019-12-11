@@ -37,7 +37,7 @@ class RegisterContainer extends Component {
       return (
         <section className="registersection">
         <div className="container mt-4">
-        <h1>Start Manage Your Team Today!</h1>
+        <h1>Manage Your Team Today!</h1>
         <div className="row">
           <div className="col-md-4 offset-md-4">
             
