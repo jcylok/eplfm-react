@@ -50,6 +50,32 @@
         "venue_address":"Bill Nicholson Way, 748 High Road",
         "venue_city":"London",
         "venue_capacity":62062
+    },
+    {
+        "team_id":40,
+        "name":"liverpool",
+        "code":null,
+        "logo":"https://www.api-football.com/public/teams/40.png",
+        "country":"England",
+        "founded":1892,
+        "venue_name":"Anfield",
+        "venue_surface":"grass",
+        "venue_address":"Anfield Road",
+        "venue_city":"Liverpool",
+        "venue_capacity":55212
+    },
+    {
+        "team_id":49,
+        "name":"chelsea",
+        "code":null,
+        "logo":"https://www.api-football.com/public/teams/49.png",
+        "country":"England",
+        "founded":1905,
+        "venue_name":"Stamford Bridge",
+        "venue_surface":"grass",
+        "venue_address":"Fulham Road",
+        "venue_city":"London",
+        "venue_capacity":41841
     }
 
 

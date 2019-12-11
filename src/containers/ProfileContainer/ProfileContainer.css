@@ -6,7 +6,8 @@
     padding-top: 60px;
     margin-top: 70px;
     font-size: 60px;
-    /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+    font-family: cursive;
+    text-shadow: 4px 4px 10px palegoldenrod;
 }
 
 #test {
