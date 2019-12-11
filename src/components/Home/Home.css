@@ -26,11 +26,31 @@
 .inlineblock h2 {
     font-size: 50px;
     padding: 20px;
+    padding-bottom: 2px;
 }
 .inlineblock p {
     font-size: 20px;
+    padding-bottom: 20px;
 }
 
 .super-title {
     color: lightgoldenrodyellow;
+}
+
+.quote {
+    color: white;
+    font-size:25px !important;
+    font-style: italic;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-family: 'Caveat', cursive;
+    margin-bottom: 0px;
+}
+
+.bill {
+    color: white;
+    font-size:25px !important;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-family: 'Caveat', cursive;
 }
