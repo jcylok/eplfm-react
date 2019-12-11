@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Modal from 'react-bootstrap/Modal';
-import Button from 'react-bootstrap/Button';
+// import Button from 'react-bootstrap/Button';
+import './ProfileEditModal.css';
 
 // import './PostDeleteModal.css'
 
@@ -11,9 +12,9 @@ function ProfileEditModal (props) {
 
   return (
     <>
-      <Button variant="primary" onClick={handleShow}>
+      <button id="editpbtn"variant="primary" onClick={handleShow}>
         Edit Profile
-      </Button>
+      </button>
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>

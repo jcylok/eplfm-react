@@ -11,7 +11,7 @@ function CreateTeamModal (props) {
 
   return (
     <>
-      <button variant="primary" onClick={handleShow}>
+      <button id="start" variant="primary" onClick={handleShow}>
         Start
       </button>
 
@@ -26,7 +26,7 @@ function CreateTeamModal (props) {
                 <form onSubmit={props.createTeamSubmit}>
                     <div className="form-group">
                         <label htmlFor="location">Team Name</label>
-                        <input onChange={props.createTeamChange} className="form-control form-control-lg" type="text" id="location" name="createName" value={props.createName} />
+                        <input onChange={props.handleChange} className="form-control form-control-lg" type="text" id="location" name="createName" value={props.createName} />
                     </div>
                   <button id="confirm-delete" onClick={handleClose} className="btn btn-primary" type="submit">Save</button>
                   <div id="cancel-button" onClick={handleClose} className="btn btn-primary">Cancel</div>

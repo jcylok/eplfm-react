@@ -139,3 +139,36 @@
     color: floralwhite;
 }
 
+/* modal */
+.header-buy, .header-sell {
+    background: palegoldenrod;
+    border-bottom: 0px solid #dee2e6;
+}
+
+.body-buy, .body-sell {
+    background: lightgoldenrodyellow;
+}
+
+.footer-buy, .footer-sell {
+    background: palegoldenrod;
+}
+
+#buyOptions {
+    background: lightgoldenrodyellow;
+    padding-bottom: 30px;
+}
+
+#buyOptions form {
+    margin-top: 5px;
+}
+
+
+.buybtn, .sellbtn {
+    background: goldenrod;
+}
+.buybtn:hover, .sellbtn:hover {
+    background: yellow;
+}
+
+
+

@@ -1,0 +1,33 @@
+.registersection {
+    height: 200vh;
+    background: red;
+    padding-top: 170px;
+    background: url(../../images/stadium.jpg);
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,.5);
+    /* box-shadow: inset 0 0 0 1000px rgba(56,0,60,.7); */
+    background-attachment: fixed;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.registersection h1 {
+    margin-bottom: 60px;
+}
+
+#register-button {
+    margin-top: 30px;
+    background: lightgoldenrodyellow;
+}
+
+#register-button:hover {
+    margin-top: 30px;
+    background: palegoldenrod;
+}
+
+#register-button span {
+    color: black;
+}
+.registersection input {
+    color: palegoldenrod;
+}

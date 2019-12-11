@@ -1,0 +1,11 @@
+#editpbtn {
+    background: none;
+    border-bottom: 0.5px solid palegoldenrod;
+    color: white;
+}
+
+#editpbtn:hover {
+    background: none;
+    border-bottom: 0.5px solid palegoldenrod;
+    color: palegoldenrod;
+}

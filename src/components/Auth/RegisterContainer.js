@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import './RegisterContainer.css';
 
 class RegisterContainer extends Component {
     state = {
@@ -27,16 +28,19 @@ class RegisterContainer extends Component {
         axios.post(`${process.env.REACT_APP_API_URL}/auth/register`, this.state)
           .then((res) => {
             console.log(res);
-            this.props.history.push('/login');
+            this.props.history.push('/');
           })
           .catch((err) => console.log(err));
     }
   
     render() {
       return (
+        <section className="registersection">
         <div className="container mt-4">
+        <h1>Start Manage Your Team Today!</h1>
         <div className="row">
           <div className="col-md-4 offset-md-4">
+            
             <form onSubmit={this.handleSubmit}>
               <div className="form-group">
                 <label htmlFor="firstName">First Name: </label>
@@ -67,12 +71,13 @@ class RegisterContainer extends Component {
                 <input onChange={this.handleChange} className="form-control form-control-lg" type="password" id="password2" name="password2" value={this.state.password2} />
               </div>
            
-              <button id="register-button" onClick={this.handleSubmit} className="btn btn-primary" type="submit">Register</button>
+              <button id="register-button" onClick={this.handleSubmit} className="btn" type="submit"><span>Register</span></button>
 
             </form>
           </div>
         </div>
       </div>
+      </section>
       )
     };
   }

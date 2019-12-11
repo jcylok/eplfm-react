@@ -5,8 +5,9 @@
 }
 
 #nav-title {
-    font-size: 22px;
-    color:rebeccapurple;
+    font-family: 'Caveat', cursive;
+    font-size: 30px;
+    color:lightgoldenrodyellow;
     padding-left: 30px;
     margin-top: 0;
     margin-bottom: 0;
@@ -30,6 +31,7 @@
 
 
 .navbutton {
+    text-transform: uppercase;
     color: rgba(0,255,133, 0.5);
     padding: 15px;
     -moz-transition: color 1s; /* Firefox */
@@ -44,6 +46,7 @@
 }
 
 .navbuttonlogout {
+    text-transform: uppercase;
     background-color: rgba(0,255,133, 0.5);
     color: rgba(56,0,60,0.7);
     padding: 8px;
@@ -63,9 +66,20 @@
     
 }
 
-@media(max-width:470px) {
+@media(max-width:747px) {
     .navbuttonlogout {
         margin-left: 0;
+        background-color: rgba(0,0,0,1);
+        color: rgba(0,255,133, 0.5);
+    }
+
+}
+
+
+@media(max-width:747px) {
+    .navbuttonlogout:hover {
+        background-color: rgba(0,0,0,1);
+        color: rgba(0,255,133, 1);
     }
 
 }

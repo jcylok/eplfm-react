@@ -29,7 +29,7 @@ const PlayerInfo = (props) => {
                 <h2>{props.infoNew.firstname} {props.infoNew.lastname}</h2>
                 <p><strong>Position:</strong> <span className="playerbasic">&nbsp;&nbsp;&nbsp;{props.infoNew.position? props.infoNew.position:"N/A"}</span></p>
                 <p><strong>Current Team:</strong><span className="playerbasic">&nbsp;&nbsp;&nbsp;{props.infoNew.team_name? props.infoNew.team_name:"N/A"}</span></p>
-                <p><strong>Height:</strong><span className="playerbasic">&nbsp;&nbsp;&nbsp;{props.infoNew.height? props.infoNew.heightL:"N/A"}</span></p>
+                <p><strong>Height:</strong><span className="playerbasic">&nbsp;&nbsp;&nbsp;{props.infoNew.height? props.infoNew.height:"N/A"}</span></p>
                 <p><strong>Weight:</strong><span className="playerbasic">&nbsp;&nbsp;&nbsp;{props.infoNew.weight? props.infoNew.weight:"N/A"}</span></p>
                 <p><strong>Birth Date:</strong> <span className="playerbasic">&nbsp;&nbsp;&nbsp;{props.infoNew.birth_date? props.infoNew.birth_date:"N/A"}</span></p>
                 <p><strong>Nationality:</strong><span className="playerbasic">&nbsp;&nbsp;&nbsp;{props.infoNew.nationality? props.infoNew.nationality:"N/A"}</span></p>
@@ -56,16 +56,16 @@ const PlayerInfo = (props) => {
                 <div className="modal fade" id="buy" tabIndex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                 <div className="modal-dialog modal-dialog-centered" role="document">
                     <div className="modal-content">
-                    <div className="modal-header">
+                    <div className="modal-header header-buy">
                         <h5 className="modal-title" id="exampleModalLongTitle">Confirm to buy this player?</h5>
                         <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <div className="modal-body">
+                    <div className="modal-body body-buy">
                         <strong>{props.infoNew.firstname} {props.infoNew.lastname}</strong>
                     </div>
-                    <div>
+                    <div id="buyOptions">
                         Position:
                         <form action="myservlet.do" method="POST">
                             <select name="buyPlayerPosition" id="buyPlayerPosition" onChange={props.roleChange}>
@@ -77,10 +77,10 @@ const PlayerInfo = (props) => {
                             </select>
                         </form>
                     </div>   
-                    <div className="modal-footer">
+                    <div className="modal-footer footer-buy">
 
-                        <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" className="btn btn-primary" onClick={() => props.buysubmitted()} data-dismiss="modal">Buy</button>
+                        <button type="button" className="btn" data-dismiss="modal">Cancel</button>
+                        <button type="button" className="btn buybtn" onClick={() => props.buysubmitted()} data-dismiss="modal">Buy</button>
                     </div>
                     </div>
                 </div>
@@ -89,18 +89,18 @@ const PlayerInfo = (props) => {
                 <div className="modal fade" id="sell" tabIndex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                 <div className="modal-dialog modal-dialog-centered" role="document">
                     <div className="modal-content">
-                    <div className="modal-header">
+                    <div className="modal-header header-sell">
                         <h5 className="modal-title" id="exampleModalLongTitle">Confirm to sell this player?</h5>
                         <button type="button" className="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
-                    <div className="modal-body">
+                    <div className="modal-body body-sell">
                         {props.infoNew.firstname} {props.infoNew.lastname}
                     </div>
-                    <div className="modal-footer">
-                        <button type="button" className="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" className="btn btn-primary" onClick={() => props.sellsubmitted()} data-dismiss="modal">Sell</button>
+                    <div className="modal-footer footer-sell">
+                        <button type="button" className="btn" data-dismiss="modal">Close</button>
+                        <button type="button" className="btn sellbtn" onClick={() => props.sellsubmitted()} data-dismiss="modal">Sell</button>
                     </div>
                     </div>
                 </div>

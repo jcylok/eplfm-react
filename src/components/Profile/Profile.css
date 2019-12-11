@@ -30,6 +30,14 @@
 
 .manager-profile h2 {
     margin-bottom: 40px;
+    font-family: 'Caveat', cursive;
+    color: palegoldenrod;
+    font-size: 40px;
+
+}
+
+.manager-profile p {
+    color: whitesmoke;
 }
 
 .managerinfo {
