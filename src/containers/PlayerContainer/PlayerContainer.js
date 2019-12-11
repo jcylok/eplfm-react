@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import axios from 'axios';
 import PlayerInfo from '../../components/PlayerInfo/PlayerInfo';
+// import './PlayerContainer.css';
 import { array } from 'prop-types';
 
 let userID = localStorage.getItem('uid');
@@ -176,9 +177,9 @@ class PlayerContainer extends Component {
 
   render () {
     return (
-      <>
+    //   <section id="player-whole">
         <PlayerInfo infoNew={this.state.playerInfoNew} infoOld={this.state.playerInfoOld} buysubmitted={this.buysubmitted} sellsubmitted={this.sellsubmitted} roleChange={this.roleChange}/>
-      </>
+    //   </section>
     );
   };
 };
