@@ -12,6 +12,7 @@ class PlayerContainer extends Component {
             playerInfoNew: {},
             playerInfoOld: {},
             buyPlayerPosition: 'forwarder',
+            team: '',
         }
         this.roleChange = this.roleChange.bind(this);
         this.buysubmitted = this.buysubmitted.bind(this);
@@ -31,14 +32,21 @@ class PlayerContainer extends Component {
 
   buysubmitted () {    
     const userId = localStorage.getItem('uid');
+    // get user profile
     axios.get(`${process.env.REACT_APP_API_URL}/users/${userId}`,{
         withCredentials: true,
     })
      .then((res) => {
+        //  this.setState({
+        //      team: res.data.data.teamNameURL
+        //  })
         console.log(res.data.data.teamNameURL)
+        // get team profile for user 
         axios.get(`${process.env.REACT_APP_API_URL}/teams/${res.data.data.teamNameURL}`)
          .then((res) => {
+            console.log(res)
             console.log(res.data.data.playerslist)
+            console.log(res.data.data.nameURL)
             if (res.data.data.playerslist.includes(window.location.pathname.split('/')[2])) {
                 alert("You've already bought this player.")
             } else if (res.data.data.playerslist.length === 11) {
@@ -54,7 +62,7 @@ class PlayerContainer extends Component {
                 newList.push(window.location.pathname.split('/')[2])
                 console.log(newList)
     
-                axios.put(`${process.env.REACT_APP_API_URL}/teams/${res.data.data.teamNameURL}`, {"playerslist": newList}, {
+                axios.put(`${process.env.REACT_APP_API_URL}/teams/${res.data.data.nameURL}`, {"playerslist": newList}, {
                     withCredentials: true,
                 })
                     .then((res) => {
@@ -68,7 +76,7 @@ class PlayerContainer extends Component {
                         positionList.push(window.location.pathname.split('/')[2])
                         console.log(positionList)
                         let position = this.state.buyPlayerPosition 
-                        axios.put(`${process.env.REACT_APP_API_URL}/teams/${res.data.data.teamNameURL}`, { [position] : positionList}, {
+                        axios.put(`${process.env.REACT_APP_API_URL}/teams/${res.data.data.nameURL}`, { [position] : positionList}, {
                             withCredentials: true,
                         })
             
@@ -105,7 +113,7 @@ class PlayerContainer extends Component {
                 console.log(filteredList)
     
              
-                axios.put(`${process.env.REACT_APP_API_URL}/teams/${res.data.data.teamNameURL}`, {"playerslist": filteredList}, {
+                axios.put(`${process.env.REACT_APP_API_URL}/teams/${res.data.data.nameURL}`, {"playerslist": filteredList}, {
                     withCredentials: true,
                 })
                     .then((res) => {
@@ -123,7 +131,7 @@ class PlayerContainer extends Component {
                             console.log(filteredList)
                 
                          
-                            axios.put(`${process.env.REACT_APP_API_URL}/teams/${res.data.data.teamNameURL}`, {[`${roles[i]}`]: filteredList}, {
+                            axios.put(`${process.env.REACT_APP_API_URL}/teams/${res.data.data.nameURL}`, {[`${roles[i]}`]: filteredList}, {
                                 withCredentials: true,
                             })
                              .then((res) => {
@@ -146,6 +154,15 @@ class PlayerContainer extends Component {
   }
 
   componentDidMount () {
+    const userId = localStorage.getItem('uid');
+    axios.get(`${process.env.REACT_APP_API_URL}/users/${userId}`,{
+        withCredentials: true,
+    })
+     .then((res) => {
+         this.setState({
+             team: res.data.data.teamNameURL
+         })})
+     .catch((err) => console.log(err));
     axios({
         "method":"GET",
         "url":`https://api-football-v1.p.rapidapi.com/v2/players/player/${window.location.pathname.split('/')[2]}/2018-2019`,
@@ -178,7 +195,7 @@ class PlayerContainer extends Component {
   render () {
     return (
     //   <section id="player-whole">
-        <PlayerInfo infoNew={this.state.playerInfoNew} infoOld={this.state.playerInfoOld} buysubmitted={this.buysubmitted} sellsubmitted={this.sellsubmitted} roleChange={this.roleChange}/>
+        <PlayerInfo infoNew={this.state.playerInfoNew} infoOld={this.state.playerInfoOld} buysubmitted={this.buysubmitted} sellsubmitted={this.sellsubmitted} roleChange={this.roleChange} team={this.state.team}/>
     //   </section>
     );
   };

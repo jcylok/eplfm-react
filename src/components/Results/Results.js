@@ -16,7 +16,7 @@ const Results = props => {
         <div className="col-md-4 resultPlayer">
             <div className="playerCard">
             <p>{props.playerdata.firstname} {props.playerdata.lastname}</p>
-            <a href={`/player/${props.playerdata.player_id}/${concatname}`}>
+            <a href={`/player/${props.playerdata.player_id}/${concatname}`} a target="_blank">
                 {/* <img mode='fit' src='https://resources.premierleague.com/photos/2019/06/20/056b6aca-a668-4b77-aeb8-a18516e8e5b6/LIV_HK_516.png?width=260&height=330' alt="jersey-pic"/> */}
                 <img mode='fit' src={images[`${props.team.replace(/ /g,'').toLowerCase()}.png`]} alt="jersey-pic"/>
             </a>

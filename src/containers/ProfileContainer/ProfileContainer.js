@@ -49,7 +49,12 @@ class ProfileContainer extends Component {
             withCredentials: true,
         })
             .then((res) => {
-                this.componentDidMount();
+                // this.componentDidMount();
+                this.setState({
+                    location: this.state.location,
+                    profilePicture: this.state.profilePicture,
+                })
+                
                 this.props.history.push('/myteam');
             })
             .catch((err) => console.log(err)); 
@@ -98,13 +103,14 @@ class ProfileContainer extends Component {
         }
 
     }
-
+ 
     componentDidMount() {
         const userId = localStorage.getItem('uid');
         axios.get(`${process.env.REACT_APP_API_URL}/users/${userId}`,{
             withCredentials: true,
         })
          .then((res) => {
+             console.log(res)
              this.setState({
                  profile: res.data.data,
                  location: res.data.data.location,

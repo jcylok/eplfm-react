@@ -4,7 +4,7 @@ import './LineupName.css';
 const LineupName = (props) => {
     console.log(props.playerID)
           return (
-            <a href={`/player/${props.playerID}/${props.concatname}`}>
+            <a href={`/player/${props.playerID}/${props.concatname}`} target="_blank">
                 <span className="singleName"><strong>{props.name}</strong></span>
             </a>
           )

@@ -39,7 +39,7 @@ const PlayerInfo = (props) => {
             </div>
 
             </div>
-            <div className="action">
+            {props.team && <div className="action">
                 <h3>Action</h3>
               <div className="actionbuttons">
 
@@ -106,7 +106,7 @@ const PlayerInfo = (props) => {
                 </div>
                 </div>
 
-            </div>
+            </div>}
 
 
 
