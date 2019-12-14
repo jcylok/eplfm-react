@@ -11,7 +11,44 @@ class RegisterContainer extends Component {
       location: '',
       password: '',
       password2: '',
+      errors: {},
     }
+
+    handleValidation() {
+      let fields = this.state;
+      let errors = {};
+      let formIsValid = true;
+
+      // first name
+      if(!fields["firstName"]){
+        formIsValid = false;
+        errors["firstName"] = "first name cannot be empty";
+      }
+      if(typeof fields["firstName"] !== "undefined"){
+        if(!fields["firstName"].match(/^[a-zA-Z]+$/)){
+          formIsValid = false;
+          errors["firstName"] = "first name can only contain letters";
+        }
+      }
+      // last name
+      if(!fields["lastName"]){
+        formIsValid = false;
+        errors["lastName"] = "last name cannot be empty";
+      }
+      if(typeof fields["lastName"] !== "undefined"){
+        if(!fields["lastName"].match(/^[a-zA-Z]+$/)){
+          formIsValid = false;
+          errors["lastName"] = "last name can only contain letters";
+        }
+      }
+      // userName
+
+    
+
+    }
+
+    
+
   
     handleChange = (event) => {
       this.setState({
