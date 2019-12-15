@@ -118,13 +118,17 @@ class RegisterContainer extends Component {
         // console.log("handle submit clicked")
         // console.log(this.state);
         if(this.handleValidation()){
-          alert("Thanks for registration!");
+          
           axios.post(`${process.env.REACT_APP_API_URL}/auth/register`, this.state)
           .then((res) => {
             console.log(res);
+            alert("Thanks for registration!");
             this.props.history.push('/');
           })
-          .catch((err) => console.log(err));
+          .catch((err) => {
+            console.log(err, 'something went wrong')
+            alert("Email or username has been registered.")
+          });
         } else {
           // alert("Form has errors.")
         }
