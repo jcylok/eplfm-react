@@ -26,6 +26,7 @@ function CreateTeamModal (props) {
                     <div className="form-group">
                         <label htmlFor="location"><span id="createteam-teamname">Team Name: </span></label>
                         <input onChange={props.createTeamChange} className="form-control form-control-lg" type="text" id="createName" name="createName" value={props.createName} />
+                        <span style={{color: "red"}}>{props.error}</span>
                     </div>
                   {/* <div id="cancel-button" onClick={handleClose} className="btn">Cancel</div> */}
                   <button id="confirm-create" onClick={handleClose} className="btn" type="submit">Save</button>

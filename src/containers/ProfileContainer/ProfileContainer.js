@@ -18,6 +18,7 @@ class ProfileContainer extends Component {
             location: '',
             profilePicture: '',
             createName: '',
+            error: '',
             forwarder: [],
             midfielder: [],
             defender: [],
@@ -29,12 +30,36 @@ class ProfileContainer extends Component {
         }
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-    }  
-    // state = {
-    //     firstName: '',
-    //     lastName: '',
-    //     location: '',
-    // }
+    }
+    createTeamValidation() {
+        let field = this.state.createName;
+        let error = '';
+        let formIsValid = true;
+  
+        // team name
+        if(!field){
+          formIsValid = false;
+          error = "Team Name cannot be empty";
+        }
+        if (/\s/.test(field)) {
+            formIsValid = false;
+            error = "Team Name cannot contain whitespace";
+        }
+        if(field.length < 4){
+            formIsValid = false;
+            error = "The length of team name must be at least 4";
+        }
+        if(typeof field!== "undefined"){
+          if(!field.match(/^[a-zA-Z]+$/)){
+            formIsValid = false;
+            error = "Team Name can only contain letters";
+          }
+        }
+      
+        this.setState({error: error});
+        return formIsValid;
+      }
+
     handleChange (event) {
         this.setState({
             [event.target.name]: event.target.value
@@ -43,21 +68,25 @@ class ProfileContainer extends Component {
 
     handleSubmit = (event) => {
         event.preventDefault();
-        let newObj = Object.assign({}, this.state);
-        delete newObj.profile;
-        axios.put(`${process.env.REACT_APP_API_URL}/users/${localStorage.getItem('uid')}`, newObj, {
-            withCredentials: true,
-        })
-            .then((res) => {
-                // this.componentDidMount();
-                this.setState({
-                    location: this.state.location,
-                    profilePicture: this.state.profilePicture,
-                })
-                
-                this.props.history.push('/myteam');
+        
+            let newObj = Object.assign({}, this.state);
+            delete newObj.profile;
+            axios.put(`${process.env.REACT_APP_API_URL}/users/${localStorage.getItem('uid')}`, newObj, {
+                withCredentials: true,
             })
-            .catch((err) => console.log(err)); 
+                .then((res) => {
+                    // this.componentDidMount();
+                    this.setState({
+                        location: this.state.location,
+                        profilePicture: this.state.profilePicture,
+                    })
+                    
+                    this.props.history.push('/myteam');
+                })
+                .catch((err) => console.log(err)); 
+
+      
+
     }
 
     createTeamChange = (event) => {
@@ -70,9 +99,7 @@ class ProfileContainer extends Component {
         event.preventDefault();
         console.log('create team submitted')
         console.log( event.target.value)
-        if (event.target.value === "") {
-            alert("Invalid Input");
-        } else {
+        if (this.createTeamValidation()) {
             axios.post(`${process.env.REACT_APP_API_URL}/teams/`, {
                 user: localStorage.getItem('uid'),
                 name: this.state.createName,
@@ -99,8 +126,8 @@ class ProfileContainer extends Component {
     
             })
             .catch((err) => console.log(err)); 
-            
-        }
+
+        } 
 
     }
  
@@ -117,10 +144,12 @@ class ProfileContainer extends Component {
                  profilePicture: res.data.data.profilePicture,
              });
              // get team data
-             axios.get(`${process.env.REACT_APP_API_URL}/teams/${this.state.profile.teamNameURL}`,{
+             console.log(this.state.profile._id)
+             axios.get(`${process.env.REACT_APP_API_URL}/teams/${this.state.profile._id}`,{
                 withCredentials: true,
             })
              .then((res) => {
+                 console.log(res)
                  this.setState({
                      forwarder: res.data.data.forwarder,
                      midfielder: res.data.data.midfielder,
@@ -202,7 +231,7 @@ class ProfileContainer extends Component {
         } else if (localStorage.getItem('uid') && this.state && !this.state.profile.teamName) {
             return (
                 <div id="test">
-                <CreateTeam createTeamSubmit={this.createTeamSubmit} createName={this.state.createName} createTeamChange={this.createTeamChange}/>
+                <CreateTeam createTeamSubmit={this.createTeamSubmit} createName={this.state.createName} createTeamChange={this.createTeamChange} error={this.state.error}/>
                 <Profile 
                     profile={this.state.profile}
                     location={this.state.location}

@@ -8,7 +8,7 @@ const CreateTeam = (props) => {
             <section id='teamnameC'>
                 <h1>Create Your Dream Team Today</h1>
                 <div>
-                <CreateTeamModal createTeamSubmit={props.createTeamSubmit} createName={props.createName} createTeamChange={props.createTeamChange}/>
+                <CreateTeamModal createTeamSubmit={props.createTeamSubmit} createName={props.createName} createTeamChange={props.createTeamChange} error={props.error}/>
                 </div>
 
             </section>

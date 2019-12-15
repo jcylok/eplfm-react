@@ -18,11 +18,6 @@ class PlayerContainer extends Component {
         this.buysubmitted = this.buysubmitted.bind(this);
         this.sellsubmitted = this.sellsubmitted.bind(this);
     }  
-//   state = {
-//     playerInfoNew: {},
-//     playerInfoOld: {},
-//     buyPlayerPosition: '',
-//   }
 
   roleChange (event) {
     this.setState({
@@ -37,12 +32,10 @@ class PlayerContainer extends Component {
         withCredentials: true,
     })
      .then((res) => {
-        //  this.setState({
-        //      team: res.data.data.teamNameURL
-        //  })
-        console.log(res.data.data.teamNameURL)
+
+        console.log(res.data.data._id)
         // get team profile for user 
-        axios.get(`${process.env.REACT_APP_API_URL}/teams/${res.data.data.teamNameURL}`)
+        axios.get(`${process.env.REACT_APP_API_URL}/teams/${res.data.data._id}`)
          .then((res) => {
             console.log(res)
             console.log(res.data.data.playerslist)
@@ -62,7 +55,7 @@ class PlayerContainer extends Component {
                 newList.push(window.location.pathname.split('/')[2])
                 console.log(newList)
     
-                axios.put(`${process.env.REACT_APP_API_URL}/teams/${res.data.data.nameURL}`, {"playerslist": newList}, {
+                axios.put(`${process.env.REACT_APP_API_URL}/teams/${res.data.data.user}`, {"playerslist": newList}, {
                     withCredentials: true,
                 })
                     .then((res) => {
@@ -76,7 +69,7 @@ class PlayerContainer extends Component {
                         positionList.push(window.location.pathname.split('/')[2])
                         console.log(positionList)
                         let position = this.state.buyPlayerPosition 
-                        axios.put(`${process.env.REACT_APP_API_URL}/teams/${res.data.data.nameURL}`, { [position] : positionList}, {
+                        axios.put(`${process.env.REACT_APP_API_URL}/teams/${res.data.data.user}`, { [position] : positionList}, {
                             withCredentials: true,
                         })
             
@@ -97,8 +90,8 @@ class PlayerContainer extends Component {
         withCredentials: true,
     })
      .then((res) => {
-        console.log(res.data.data.teamNameURL)
-        axios.get(`${process.env.REACT_APP_API_URL}/teams/${res.data.data.teamNameURL}`)
+        console.log(res.data.data._id)
+        axios.get(`${process.env.REACT_APP_API_URL}/teams/${res.data.data._id}`)
          .then((res) => {
             console.log(res.data.data.playerslist)
             if (!res.data.data.playerslist.includes(window.location.pathname.split('/')[2])) {
@@ -113,7 +106,7 @@ class PlayerContainer extends Component {
                 console.log(filteredList)
     
              
-                axios.put(`${process.env.REACT_APP_API_URL}/teams/${res.data.data.nameURL}`, {"playerslist": filteredList}, {
+                axios.put(`${process.env.REACT_APP_API_URL}/teams/${res.data.data.user}`, {"playerslist": filteredList}, {
                     withCredentials: true,
                 })
                     .then((res) => {
@@ -131,7 +124,7 @@ class PlayerContainer extends Component {
                             console.log(filteredList)
                 
                          
-                            axios.put(`${process.env.REACT_APP_API_URL}/teams/${res.data.data.nameURL}`, {[`${roles[i]}`]: filteredList}, {
+                            axios.put(`${process.env.REACT_APP_API_URL}/teams/${res.data.data.user}`, {[`${roles[i]}`]: filteredList}, {
                                 withCredentials: true,
                             })
                              .then((res) => {
